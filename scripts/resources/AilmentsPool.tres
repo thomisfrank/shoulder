@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AilmentPool" format=3 uid="uid://b43yegegd0j4k"]
+
+[ext_resource type="Script" uid="uid://bol2es41r1v6r" path="res://scripts/resources/AilmentsPool.gd" id="1_pmdxt"]
+
+[resource]
+script = ExtResource("1_pmdxt")
+metadata/_custom_type_script = "uid://bol2es41r1v6r"

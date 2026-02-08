@@ -1,0 +1,436 @@
+[gd_scene format=3 uid="uid://c01bs7xy0imxm"]
+
+[ext_resource type="Script" uid="uid://bhn4eihie8yns" path="res://scripts/header.gd" id="1_lfncw"]
+[ext_resource type="Texture2D" uid="uid://bujkhgst8rpp6" path="res://assets/UI/Frame.png" id="1_sp3mi"]
+[ext_resource type="Script" uid="uid://dxlmg66g6ri71" path="res://scripts/resources/SubjectResource.gd" id="2_4orbe"]
+[ext_resource type="Shader" uid="uid://c6oteb2baf8bb" path="res://scripts/shaders/displacement.gdshader" id="2_uoemc"]
+[ext_resource type="Texture2D" uid="uid://dj22yglh76khc" path="res://assets/UI/AngelIcon.png" id="3_qhj4n"]
+[ext_resource type="Texture2D" uid="uid://dx6p8mmstu7vj" path="res://assets/UI/Subject.png" id="4_uoemc"]
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="5_6jipm"]
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="6_lfncw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jipm"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 1)
+border_width_bottom = 4
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[sub_resource type="Resource" id="Resource_bayhp"]
+script = ExtResource("2_4orbe")
+metadata/_custom_type_script = "uid://dxlmg66g6ri71"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfncw"]
+texture = ExtResource("1_sp3mi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4orbe"]
+shader = ExtResource("2_uoemc")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.5
+shader_parameter/intensityX = 2.5
+shader_parameter/intensityY = 2.5
+shader_parameter/seed = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4orbe"]
+bg_color = Color(0.7254902, 0.41568628, 0.68235296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bayhp"]
+bg_color = Color(0.6431373, 0.27058825, 0.9764706, 1)
+
+[node name="Header" type="PanelContainer" unique_id=1741394942]
+custom_minimum_size = Vector2(1179, 230)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.08998435
+offset_bottom = -21.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6jipm")
+script = ExtResource("1_lfncw")
+SubjectInfo = SubResource("Resource_bayhp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame" type="PanelContainer" parent="." unique_id=929900566]
+texture_filter = 1
+custom_minimum_size = Vector2(105, 105)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_lfncw")
+
+[node name="DepartmentBadge" type="TextureRect" parent="Frame" unique_id=1521626115]
+texture_filter = 1
+material = SubResource("ShaderMaterial_4orbe")
+custom_minimum_size = Vector2(70, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_qhj4n")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Subject" type="HBoxContainer" parent="." unique_id=972709658]
+custom_minimum_size = Vector2(882, 132)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="SubjectImage" type="TextureRect" parent="Subject" unique_id=764336011]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("4_uoemc")
+stretch_mode = 4
+
+[node name="SubjextData" type="VBoxContainer" parent="Subject" unique_id=1587575655]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Subject/SubjextData" unique_id=1274887082]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="SubjectName" type="HBoxContainer" parent="Subject/SubjextData/HBoxContainer" unique_id=105992644]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="SubjectName" type="RichTextLabel" parent="Subject/SubjextData/HBoxContainer/SubjectName" unique_id=2137581663]
+texture_filter = 1
+custom_minimum_size = Vector2(95, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("5_6jipm")
+theme_override_font_sizes/normal_font_size = 48
+text = "Name"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="SubjectSurname" type="RichTextLabel" parent="Subject/SubjextData/HBoxContainer/SubjectName" unique_id=1466748327]
+texture_filter = 1
+custom_minimum_size = Vector2(95, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("5_6jipm")
+theme_override_font_sizes/normal_font_size = 48
+text = "Surname"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="SubjectJobTitle" type="RichTextLabel" parent="Subject/SubjextData/HBoxContainer" unique_id=2143919833]
+texture_filter = 1
+custom_minimum_size = Vector2(95, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("5_6jipm")
+theme_override_font_sizes/normal_font_size = 28
+text = "Job Title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="SubjectStats" type="HBoxContainer" parent="Subject/SubjextData" unique_id=1376793112]
+custom_minimum_size = Vector2(675, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="HardStats" type="VBoxContainer" parent="Subject/SubjextData/SubjectStats" unique_id=1645119009]
+custom_minimum_size = Vector2(330, 127)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="IntellectStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/HardStats" unique_id=58145558]
+custom_minimum_size = Vector2(320, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="IntellectLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/IntellectStat" unique_id=809673351]
+texture_filter = 1
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Intellect"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/HardStats/IntellectStat" unique_id=305304392]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+min_value = -50.0
+value = 75.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/IntellectStat/StatBar" unique_id=293936942]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "75/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AestheticStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/HardStats" unique_id=1967560727]
+custom_minimum_size = Vector2(320, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="AestheticLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/AestheticStat" unique_id=908578601]
+texture_filter = 1
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Aesthetic"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/HardStats/AestheticStat" unique_id=402458188]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+min_value = -50.0
+value = 29.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/AestheticStat/StatBar" unique_id=788370921]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "29/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/HardStats" unique_id=836743844]
+custom_minimum_size = Vector2(320, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="HealthLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/HealthStat" unique_id=789223867]
+texture_filter = 1
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Health"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/HardStats/HealthStat" unique_id=385841237]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+value = 80.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/HealthStat/StatBar" unique_id=1019019302]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "80/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoftStats" type="VBoxContainer" parent="Subject/SubjextData/SubjectStats" unique_id=1293565792]
+custom_minimum_size = Vector2(330, 127)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="VolatilityStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/SoftStats" unique_id=1494795268]
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="VolatilityLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/VolatilityStat" unique_id=78134506]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Volatility"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/SoftStats/VolatilityStat" unique_id=2008690958]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+max_value = 50.0
+value = 25.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/VolatilityStat/StatBar" unique_id=366635116]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Spontaneous"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AffectStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/SoftStats" unique_id=1403477646]
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="AffectLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/AffectStat" unique_id=401621172]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Affect"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/SoftStats/AffectStat" unique_id=1429033963]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+max_value = 50.0
+value = 32.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/AffectStat/StatBar" unique_id=733956777]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Fine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NatureStat" type="HBoxContainer" parent="Subject/SubjextData/SubjectStats/SoftStats" unique_id=1143461781]
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="NatureLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/NatureStat" unique_id=257596365]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Nature"
+vertical_alignment = 1
+
+[node name="StatBar" type="ProgressBar" parent="Subject/SubjextData/SubjectStats/SoftStats/NatureStat" unique_id=2064659732]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
+max_value = 50.0
+value = 48.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/NatureStat/StatBar" unique_id=324943833]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 35)
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 24
+text = "Social"
+horizontal_alignment = 1
+vertical_alignment = 1

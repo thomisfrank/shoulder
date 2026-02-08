@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://x1n7iqwvwd56"]
+
+[ext_resource type="Script" uid="uid://07p1pm4kw44g" path="res://scripts/leisure_activities.gd" id="1_dcv0v"]
+[ext_resource type="Texture2D" uid="uid://cmpl6ycsbis6a" path="res://assets/UI/TopBar.png" id="1_w81n4"]
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_hs781"]
+[ext_resource type="Texture2D" uid="uid://bm6u6j7w8784c" path="res://assets/UI/arrowCaret.png" id="3_tnd0p"]
+[ext_resource type="Texture2D" uid="uid://cv5po3qv0u4tt" path="res://assets/UI/arrowCaretUp.png" id="4_34ole"]
+[ext_resource type="Texture2D" uid="uid://hyenri3iusvc" path="res://assets/UI/Button.png" id="6_0ysgw"]
+[ext_resource type="Texture2D" uid="uid://bjergo5oov8q4" path="res://assets/UI/ButtonPressed.png" id="7_dcv0v"]
+[ext_resource type="Texture2D" uid="uid://dg7ejdjvblidy" path="res://assets/UI/ButtonHover.png" id="8_n1i01"]
+[ext_resource type="Texture2D" uid="uid://ds3osrjv70j3e" path="res://assets/UI/physical_icon.png" id="9_vunxs"]
+[ext_resource type="Texture2D" uid="uid://cx531jgy256pe" path="res://assets/UI/creative_icon.png" id="10_8w8tu"]
+[ext_resource type="Texture2D" uid="uid://cbooyswecri8o" path="res://assets/UI/cognitive_icon.png" id="11_gwibj"]
+[ext_resource type="Texture2D" uid="uid://dsg1wigs3wg3c" path="res://assets/UI/media_icon.png" id="12_g8fn4"]
+[ext_resource type="Texture2D" uid="uid://bxm7ksv6dn75v" path="res://assets/UI/relaxation_icon.png" id="13_qdhcm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rnk1"]
+texture = ExtResource("1_w81n4")
+texture_margin_left = 48.0
+texture_margin_top = 5.0
+texture_margin_right = 48.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3ben"]
+bg_color = Color(0.99607843, 0.9254902, 0.78431374, 1)
+border_width_top = 4
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_14hlk"]
+texture = ExtResource("6_0ysgw")
+texture_margin_bottom = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sb6ms"]
+texture = ExtResource("7_dcv0v")
+texture_margin_bottom = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wcsbo"]
+texture = ExtResource("8_n1i01")
+texture_margin_bottom = 35.0
+
+[node name="LeisureActivities" type="VBoxContainer" unique_id=1159599601]
+offset_top = -1.0
+offset_right = 1180.0
+offset_bottom = 335.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 0
+script = ExtResource("1_dcv0v")
+
+[node name="LeisureActivitiesHeaderBar" type="PanelContainer" parent="." unique_id=1040033905]
+texture_filter = 1
+custom_minimum_size = Vector2(1179, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4rnk1")
+
+[node name="LeisureActivitiesLabel" type="RichTextLabel" parent="LeisureActivitiesHeaderBar" unique_id=80796404]
+texture_filter = 1
+custom_minimum_size = Vector2(95, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("2_hs781")
+theme_override_font_sizes/normal_font_size = 48
+text = "Leisure Activities"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="CaretButton" type="TextureButton" parent="LeisureActivitiesHeaderBar" unique_id=87368040]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+tooltip_text = "Leisure Activities"
+toggle_mode = true
+texture_normal = ExtResource("4_34ole")
+texture_pressed = ExtResource("3_tnd0p")
+
+[node name="Body" type="PanelContainer" parent="." unique_id=761732660]
+visible = false
+custom_minimum_size = Vector2(1180, 266)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u3ben")
+
+[node name="Buttons" type="HBoxContainer" parent="Body" unique_id=1781288263]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 68
+
+[node name="PhysicalButton" type="Button" parent="Body/Buttons" unique_id=572373196]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 170)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("2_hs781")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_14hlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sb6ms")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wcsbo")
+text = "Physical"
+icon = ExtResource("9_vunxs")
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="CreativeButton" type="Button" parent="Body/Buttons" unique_id=1997205285]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 170)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("2_hs781")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_14hlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sb6ms")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wcsbo")
+text = "Creative"
+icon = ExtResource("10_8w8tu")
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="CognitiveButton" type="Button" parent="Body/Buttons" unique_id=1824310099]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 170)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("2_hs781")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_14hlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sb6ms")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wcsbo")
+text = "Cognitive"
+icon = ExtResource("11_gwibj")
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="MediaButton" type="Button" parent="Body/Buttons" unique_id=119082193]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 170)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("2_hs781")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_14hlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sb6ms")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wcsbo")
+text = "Media"
+icon = ExtResource("12_g8fn4")
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="RelaxationButton" type="Button" parent="Body/Buttons" unique_id=229610072]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 170)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("2_hs781")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_14hlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sb6ms")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wcsbo")
+text = "Relaxation"
+icon = ExtResource("13_qdhcm")
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[connection signal="pressed" from="LeisureActivitiesHeaderBar/CaretButton" to="." method="_on_caret_button_pressed"]

@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://0amoclnjvogc"]
+
+[ext_resource type="PackedScene" uid="uid://bvl68qqadpqq0" path="res://scenes/background.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c01bs7xy0imxm" path="res://scenes/header.tscn" id="2_sugp2"]
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://x1n7iqwvwd56" path="res://scenes/leisure_activities.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://hfe4jado8spr" path="res://assets/UI/LongButton.png" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bnmxqtt2fe506" path="res://assets/UI/LongButtonPressed.png" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dfd14fkx6wm0o" path="res://assets/UI/LongButtonDisabled.png" id="7_85g3d"]
+[ext_resource type="Texture2D" uid="uid://kjavr4y2mt6o" path="res://assets/UI/LongButtonHover.png" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://di50iodvsxsa7" path="res://scenes/message_box.tscn" id="9_choun"]
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="10_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://wr1vkysksear" path="res://assets/UI/DOWN.png" id="11_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ciqn7eq046lne" path="res://scenes/department_card.tscn" id="11_trceg"]
+[ext_resource type="Texture2D" uid="uid://fr1pqtnvy8cv" path="res://assets/UI/UP.png" id="12_trceg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbgi4"]
+texture = ExtResource("4_jyhfs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g3d"]
+texture = ExtResource("6_o6xl0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_choun"]
+texture = ExtResource("7_tipki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ya4ey"]
+texture = ExtResource("7_85g3d")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8y0u"]
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 0.54901963)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6dy"]
+bg_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+skew = Vector2(40, 100)
+
+[node name="main" type="Control" unique_id=78729341]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." unique_id=238670829 instance=ExtResource("1_0wfyh")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1179.0
+offset_bottom = 2556.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 2
+
+[node name="Header" parent="." unique_id=1741394942 instance=ExtResource("2_sugp2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1179.0
+offset_bottom = 230.0
+grow_horizontal = 1
+
+[node name="BottomTray" type="VBoxContainer" parent="." unique_id=2008639810]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1180.0
+offset_top = -622.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 48
+alignment = 2
+
+[node name="Divider" type="HBoxContainer" parent="BottomTray" unique_id=745129262]
+custom_minimum_size = Vector2(1179, 20)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="L" type="ColorRect" parent="BottomTray/Divider" unique_id=756161019]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="line" type="ColorRect" parent="BottomTray/Divider" unique_id=881431552]
+custom_minimum_size = Vector2(1139, 4)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="R" type="ColorRect" parent="BottomTray/Divider" unique_id=244694479]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="NextDay" type="Button" parent="BottomTray" unique_id=330960935]
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("3_o6xl0")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbgi4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85g3d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_choun")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ya4ey")
+text = "Next Day"
+metadata/_edit_use_anchors_ = true
+
+[node name="LeisureActivities" parent="BottomTray" unique_id=1159599601 instance=ExtResource("3_sugp2")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="LeisureActivitiesHeaderBar" parent="BottomTray/LeisureActivities" index="0" unique_id=1040033905]
+size_flags_vertical = 4
+
+[node name="Body" parent="BottomTray/LeisureActivities" index="1" unique_id=761732660]
+size_flags_vertical = 4
+
+[node name="Feed" type="Control" parent="." unique_id=659325919]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 278.0
+offset_right = 1128.0
+offset_bottom = 2149.0
+
+[node name="MessageFeed" type="VBoxContainer" parent="Feed" unique_id=629204094]
+visible = false
+custom_minimum_size = Vector2(1004, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1007.0
+offset_bottom = 1874.0
+theme_override_constants/separation = 48
+alignment = 2
+
+[node name="DateBadge" type="RichTextLabel" parent="Feed/MessageFeed" unique_id=1095650799]
+custom_minimum_size = Vector2(1004, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("10_ya4ey")
+theme_override_font_sizes/normal_font_size = 32
+text = "Saturday Feb 7"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageBox" parent="Feed/MessageFeed" unique_id=614344939 instance=ExtResource("9_choun")]
+custom_minimum_size = Vector2(1004, 200)
+layout_mode = 2
+
+[node name="ChooseDepartment" type="VBoxContainer" parent="Feed" unique_id=1873937601]
+visible = false
+custom_minimum_size = Vector2(1004, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1007.0
+offset_bottom = 1874.0
+theme_override_constants/separation = 48
+alignment = 2
+
+[node name="MessageBox" parent="Feed/ChooseDepartment" unique_id=1895392754 instance=ExtResource("9_choun")]
+custom_minimum_size = Vector2(1004, 200)
+layout_mode = 2
+
+[node name="MessageContent" parent="Feed/ChooseDepartment/MessageBox" index="0" unique_id=976183127]
+text = "Pick a department to work in."
+
+[node name="Department Cards" type="HBoxContainer" parent="Feed/ChooseDepartment" unique_id=1297541871]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="AngelDepartmentCard" parent="Feed/ChooseDepartment/Department Cards" unique_id=1169117610 instance=ExtResource("11_trceg")]
+layout_mode = 2
+
+[node name="DevilDepartmentCard" parent="Feed/ChooseDepartment/Department Cards" unique_id=134104873 instance=ExtResource("11_trceg")]
+layout_mode = 2
+
+[node name="Angel" parent="Feed/ChooseDepartment/Department Cards/DevilDepartmentCard" index="0" unique_id=1729845267]
+visible = false
+
+[node name="Devil" parent="Feed/ChooseDepartment/Department Cards/DevilDepartmentCard" index="1" unique_id=496418629]
+visible = true
+
+[node name="VScrollBar" type="VScrollBar" parent="Feed" unique_id=1774241340]
+visible = false
+custom_minimum_size = Vector2(30, 1872)
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 2.0
+offset_right = 1086.0
+offset_bottom = 1874.0
+theme_override_icons/increment = ExtResource("11_eb6dy")
+theme_override_icons/decrement = ExtResource("12_trceg")
+theme_override_styles/scroll = SubResource("StyleBoxFlat_a8y0u")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_eb6dy")
+value = 50.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=685945180]
+visible = false
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 690.0
+offset_right = -79.0
+offset_bottom = 738.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 0, 1, 1)
+
+[editable path="BottomTray/LeisureActivities"]
+[editable path="Feed/ChooseDepartment/MessageBox"]
+[editable path="Feed/ChooseDepartment/Department Cards/DevilDepartmentCard"]

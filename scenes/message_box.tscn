@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://di50iodvsxsa7"]
+
+[ext_resource type="Texture2D" uid="uid://owyryha0o0vn" path="res://assets/UI/MessageBubble.png" id="1_bi8wi"]
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="2_c0gpv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfa0y"]
+texture = ExtResource("1_bi8wi")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 48.0
+texture_margin_bottom = 48.0
+
+[node name="MessageBox" type="PanelContainer" unique_id=614344939]
+texture_filter = 1
+custom_minimum_size = Vector2(1056, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wfa0y")
+
+[node name="MessageContent" type="RichTextLabel" parent="." unique_id=976183127]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("2_c0gpv")
+theme_override_font_sizes/normal_font_size = 36
+text = "Delmont went to work."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
