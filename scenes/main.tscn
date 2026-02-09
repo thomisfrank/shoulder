@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://0amoclnjvogc"]
+
+[ext_resource type="PackedScene" uid="uid://bvl68qqadpqq0" path="res://scenes/background.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://c24m78rcgbp6d" path="res://scenes/main.gd" id="1_choun"]
+[ext_resource type="PackedScene" uid="uid://c01bs7xy0imxm" path="res://scenes/header.tscn" id="2_sugp2"]
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://x1n7iqwvwd56" path="res://scenes/leisure_activities.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://hfe4jado8spr" path="res://assets/UI/LongButton.png" id="4_jyhfs"]
+[ext_resource type="Resource" uid="uid://cod4qrdlvcyys" path="res://scripts/resources/JobMessagesPool.tres" id="5_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://bnmxqtt2fe506" path="res://assets/UI/LongButtonPressed.png" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dfd14fkx6wm0o" path="res://assets/UI/LongButtonDisabled.png" id="7_85g3d"]
+[ext_resource type="Texture2D" uid="uid://kjavr4y2mt6o" path="res://assets/UI/LongButtonHover.png" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://cvbyukahl7rlt" path="res://scenes/feed.tscn" id="9_85g3d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbgi4"]
+texture = ExtResource("4_jyhfs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g3d"]
+texture = ExtResource("6_o6xl0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_choun"]
+texture = ExtResource("7_tipki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ya4ey"]
+texture = ExtResource("7_85g3d")
+
+[node name="main" type="Control" unique_id=78729341]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_choun")
+metadata/_edit_horizontal_guides_ = [250.0, 2130.0]
+
+[node name="Background" parent="." unique_id=238670829 instance=ExtResource("1_0wfyh")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1179.0
+offset_bottom = 2556.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 2
+
+[node name="Header" parent="." unique_id=1741394942 instance=ExtResource("2_sugp2")]
+layout_mode = 1
+anchor_left = 0.0016963528
+anchor_right = 0.0016963528
+anchor_bottom = 0.0
+offset_right = 1179.0
+offset_bottom = 230.0
+grow_horizontal = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1308280260]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -589.5
+offset_right = 589.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Feed" parent="VBoxContainer" unique_id=868917419 instance=ExtResource("9_85g3d")]
+custom_minimum_size = Vector2(1179, 1545)
+layout_mode = 2
+job_messages_resource = ExtResource("5_eb6dy")
+feed_height_min = 1595.0
+
+[node name="MessageFeedScrolling" parent="VBoxContainer/Feed" index="1" unique_id=512820941]
+custom_minimum_size = Vector2(1056, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052162807
+anchor_right = 0.9478372
+offset_top = -60.0
+offset_bottom = 1542.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageFeed" parent="VBoxContainer/Feed/MessageFeedScrolling" index="0" unique_id=438092332]
+size_flags_horizontal = 3
+
+[node name="BottomTray" type="VBoxContainer" parent="VBoxContainer" unique_id=2008639810]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 2
+
+[node name="Divider" type="HBoxContainer" parent="VBoxContainer/BottomTray" unique_id=745129262]
+custom_minimum_size = Vector2(1179, 20)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="L" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=756161019]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="line" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=881431552]
+custom_minimum_size = Vector2(1139, 4)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="R" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=244694479]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[node name="NextDay" type="Button" parent="VBoxContainer/BottomTray" unique_id=330960935]
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("3_o6xl0")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbgi4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85g3d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_choun")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ya4ey")
+text = "Next Day"
+metadata/_edit_use_anchors_ = true
+
+[node name="LeisureActivities" parent="VBoxContainer/BottomTray" unique_id=1159599601 instance=ExtResource("3_sugp2")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="LeisureActivitiesHeaderBar" parent="VBoxContainer/BottomTray/LeisureActivities" index="0" unique_id=1040033905]
+size_flags_vertical = 4
+
+[node name="Body" parent="VBoxContainer/BottomTray/LeisureActivities" index="1" unique_id=761732660]
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=685945180]
+visible = false
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1179.0
+offset_top = -1048.0
+offset_right = -1131.0
+offset_bottom = -1000.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 0, 1, 1)
+
+[connection signal="pressed" from="VBoxContainer/BottomTray/NextDay" to="." method="_on_next_day_pressed"]
+
+[editable path="VBoxContainer/Feed"]
+[editable path="VBoxContainer/Feed/DepartmentFeed/MessageBox"]
+[editable path="VBoxContainer/Feed/DepartmentFeed/Department Cards/DevilDepartmentCard"]
+[editable path="VBoxContainer/BottomTray/LeisureActivities"]

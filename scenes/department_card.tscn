@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://ciqn7eq046lne"]
+
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_0a6b4"]
+[ext_resource type="Texture2D" uid="uid://dj22yglh76khc" path="res://assets/UI/AngelIcon.png" id="2_o7glu"]
+[ext_resource type="Texture2D" uid="uid://ddsno1np8oosq" path="res://assets/UI/DevilIcon.png" id="3_v5kjl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gtito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_src81"]
+bg_color = Color(1, 0.6431373, 0.9529412, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtito"]
+content_margin_left = 24.0
+content_margin_top = 32.0
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 1)
+border_width_bottom = 4
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77kb2"]
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 1)
+border_width_top = 4
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[node name="DepartmentCard" type="PanelContainer" unique_id=1169117610]
+material = SubResource("ShaderMaterial_gtito")
+custom_minimum_size = Vector2(500, 650)
+offset_right = 500.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_src81")
+
+[node name="Angel" type="VBoxContainer" parent="." unique_id=1729845267]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="Angel" unique_id=530587835]
+custom_minimum_size = Vector2(500, 111)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gtito")
+
+[node name="Deparment" type="RichTextLabel" parent="Angel/Header" unique_id=349345021]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("1_0a6b4")
+theme_override_font_sizes/normal_font_size = 48
+text = "Angel Department"
+
+[node name="Icon" type="Control" parent="Angel" unique_id=2064553744]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Shadow" type="TextureRect" parent="Angel/Icon" unique_id=248383467]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(214, 193)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 52.0
+offset_right = 366.0
+offset_bottom = 245.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_o7glu")
+
+[node name="Angel" type="TextureRect" parent="Angel/Icon" unique_id=2107583897]
+texture_filter = 1
+custom_minimum_size = Vector2(214, 193)
+layout_mode = 0
+offset_left = 143.0
+offset_top = 53.0
+offset_right = 357.0
+offset_bottom = 246.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_o7glu")
+
+[node name="Body" type="PanelContainer" parent="Angel" unique_id=1802500378]
+custom_minimum_size = Vector2(500, 231)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_77kb2")
+
+[node name="Devil" type="VBoxContainer" parent="." unique_id=496418629]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="Devil" unique_id=917488344]
+custom_minimum_size = Vector2(500, 111)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gtito")
+
+[node name="Deparment" type="RichTextLabel" parent="Devil/Header" unique_id=281939803]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("1_0a6b4")
+theme_override_font_sizes/normal_font_size = 48
+text = "Devil Department"
+
+[node name="Icon" type="Control" parent="Devil" unique_id=1570838138]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Shadow" type="TextureRect" parent="Devil/Icon" unique_id=386993437]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(214, 193)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 105.0
+offset_right = 366.0
+offset_bottom = 319.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v5kjl")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Devil" type="TextureRect" parent="Devil/Icon" unique_id=388679929]
+texture_filter = 1
+custom_minimum_size = Vector2(214, 193)
+layout_mode = 0
+offset_left = 146.0
+offset_top = 109.0
+offset_right = 360.0
+offset_bottom = 302.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v5kjl")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Body" type="PanelContainer" parent="Devil" unique_id=1391957007]
+custom_minimum_size = Vector2(500, 231)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_77kb2")
+
+[node name="Button" type="Button" parent="." unique_id=1607613372]
+layout_mode = 2
+flat = true

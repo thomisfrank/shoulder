@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="JobMessagesPool" format=3 uid="uid://cod4qrdlvcyys"]
+
+[ext_resource type="Script" uid="uid://dwkb248651yt3" path="res://scripts/resources/JobMessagesPool.gd" id="1_4evoc"]
+
+[resource]
+script = ExtResource("1_4evoc")
+metadata/_custom_type_script = "uid://dwkb248651yt3"

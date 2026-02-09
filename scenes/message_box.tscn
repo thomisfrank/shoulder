@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://di50iodvsxsa7"]
+
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="2_c0gpv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7dwdg"]
+load_path = "res://.godot/imported/MessageBubble.png-222d8e513ab036ba23a7d3bb5350afdb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bi8wi"]
+texture = SubResource("CompressedTexture2D_7dwdg")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 48.0
+texture_margin_bottom = 48.0
+
+[node name="MessageBox" type="RichTextLabel" unique_id=976183127]
+custom_minimum_size = Vector2(942, 0)
+offset_right = 950.0
+offset_bottom = 197.0
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("2_c0gpv")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_bi8wi")
+text = "Delmont went to work."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+vertical_alignment = 1
