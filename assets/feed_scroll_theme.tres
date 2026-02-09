@@ -1,0 +1,74 @@
+[gd_resource type="Theme" format=3 uid="uid://cn7du1jmsdiwo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tian8"]
+load_path = "res://.godot/imported/UP.png-ffee94c4b89ce7797a4eaa27182a43e8.ctex"
+
+[sub_resource type="ImageTexture" id="ImageTexture_tian8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fo328"]
+load_path = "res://.godot/imported/DOWN.png-a14f60ff57b6e7cb60312619c8d37467.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j338"]
+bg_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6aww8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wf5t"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxcd"]
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 0.54901963)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh8ky"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+default_base_scale = 1.2
+VScrollBar/icons/decrement = SubResource("CompressedTexture2D_tian8")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_tian8")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_tian8")
+VScrollBar/icons/increment = SubResource("CompressedTexture2D_fo328")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_tian8")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_tian8")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4j338")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_6aww8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_1wf5t")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ooxcd")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_lh8ky")

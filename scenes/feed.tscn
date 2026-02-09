@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cvbyukahl7rlt"]
+
+[ext_resource type="Script" uid="uid://c7nkwstygpu4n" path="res://scripts/feed.gd" id="1_emwvj"]
+[ext_resource type="PackedScene" uid="uid://di50iodvsxsa7" path="res://scenes/message_box.tscn" id="2_emwvj"]
+[ext_resource type="PackedScene" uid="uid://ciqn7eq046lne" path="res://scenes/department_card.tscn" id="3_xqvqw"]
+[ext_resource type="Theme" uid="uid://cn7du1jmsdiwo" path="res://assets/feed_scroll_theme.tres" id="6_scroll_theme"]
+
+[node name="Feed" type="Control" unique_id=868917419]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1083.0
+offset_bottom = 1871.0
+script = ExtResource("1_emwvj")
+
+[node name="DepartmentFeed" type="VBoxContainer" parent="." unique_id=606526574]
+visible = false
+custom_minimum_size = Vector2(1004, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1093.0
+offset_bottom = 1803.0
+theme_override_constants/separation = 48
+alignment = 2
+
+[node name="MessageBox" parent="DepartmentFeed" unique_id=562238520 instance=ExtResource("2_emwvj")]
+custom_minimum_size = Vector2(1004, 200)
+layout_mode = 2
+
+[node name="Department Cards" type="HBoxContainer" parent="DepartmentFeed" unique_id=1707866552]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="AngelDepartmentCard" parent="DepartmentFeed/Department Cards" unique_id=1169117610 instance=ExtResource("3_xqvqw")]
+layout_mode = 2
+
+[node name="DevilDepartmentCard" parent="DepartmentFeed/Department Cards" unique_id=1185550334 instance=ExtResource("3_xqvqw")]
+layout_mode = 2
+
+[node name="Angel" parent="DepartmentFeed/Department Cards/DevilDepartmentCard" index="0" unique_id=1729845267]
+visible = false
+
+[node name="Devil" parent="DepartmentFeed/Department Cards/DevilDepartmentCard" index="1" unique_id=496418629]
+visible = true
+
+[node name="MessageFeedScrolling" type="ScrollContainer" parent="." unique_id=512820941]
+custom_minimum_size = Vector2(1056, 1545)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_scroll_theme")
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+scroll_deadzone = 1
+
+[node name="MessageFeed" type="VBoxContainer" parent="MessageFeedScrolling" unique_id=438092332]
+visible = false
+custom_minimum_size = Vector2(1056, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/separation = 48
+alignment = 2
+
+[editable path="DepartmentFeed/MessageBox"]
+[editable path="DepartmentFeed/Department Cards/DevilDepartmentCard"]

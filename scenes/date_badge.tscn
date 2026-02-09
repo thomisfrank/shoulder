@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dwvg7cyvc0cyt"]
+
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="1_ty4jy"]
+
+[node name="DateBadge" type="RichTextLabel" unique_id=630602549]
+custom_minimum_size = Vector2(1004, 50)
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("1_ty4jy")
+theme_override_font_sizes/normal_font_size = 32
+text = "Saturday Feb 7"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+vertical_alignment = 1
