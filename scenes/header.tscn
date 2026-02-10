@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bujkhgst8rpp6" path="res://assets/UI/Frame.png" id="1_sp3mi"]
 [ext_resource type="Script" uid="uid://dxlmg66g6ri71" path="res://scripts/resources/SubjectResource.gd" id="2_4orbe"]
 [ext_resource type="Shader" uid="uid://c6oteb2baf8bb" path="res://scripts/shaders/displacement.gdshader" id="2_uoemc"]
-[ext_resource type="Texture2D" uid="uid://dj22yglh76khc" path="res://assets/UI/AngelIcon.png" id="3_qhj4n"]
 [ext_resource type="Texture2D" uid="uid://dx6p8mmstu7vj" path="res://assets/UI/Subject.png" id="4_uoemc"]
 [ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="5_6jipm"]
+[ext_resource type="Texture2D" uid="uid://ddsno1np8oosq" path="res://assets/UI/DevilIcon.png" id="5_bayhp"]
 [ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="6_lfncw"]
+[ext_resource type="Texture2D" uid="uid://dee2f8ecjeq1a" path="res://assets/UI/energy.png" id="7_bayhp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jipm"]
 content_margin_left = 24.0
@@ -30,6 +31,49 @@ shader_parameter/timeDelay = 0.5
 shader_parameter/intensityX = 2.5
 shader_parameter/intensityY = 2.5
 shader_parameter/seed = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgqv6"]
+bg_color = Color(0.82225245, 0.33111826, 0.23876452, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5rga"]
+bg_color = Color(0.39607844, 0.5764706, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdqld"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+border_blend = true
+
+[sub_resource type="Shader" id="Shader_bayhp"]
+code = "shader_type canvas_item;
+uniform float interval = 0.5; // the displacement will happen every [interval] seconds
+uniform float timeDelay = 0.0; // use it if you don't want all the sprites to move at the same time
+uniform float intensityX = 20.0; // X axis force of movement
+uniform float intensityY = 20.0; // Y axis force of movement
+uniform float seed = 42.0; // seed to randomize movement
+
+void vertex() {
+	float chunk = floor((TIME + timeDelay) / interval);
+	float seedNum = VERTEX.x + VERTEX.y + chunk + seed;
+	float offsetX = sin(seedNum * 12.9898) * 43758.5453;
+	float offsetY = sin(seedNum * 32.9472) * 94726.0482;
+	offsetX = fract(offsetX);
+	offsetX = offsetX * 2.0 - 1.0;
+	offsetY = fract(offsetY);
+	offsetY = offsetY * 2.0 - 1.0;
+	VERTEX += vec2(offsetX * intensityX, offsetY * intensityY);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgqv6"]
+shader = SubResource("Shader_bayhp")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.5
+shader_parameter/intensityY = 1.5
+shader_parameter/seed = 31.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4orbe"]
 bg_color = Color(0.7254902, 0.41568628, 0.68235296, 1)
@@ -64,7 +108,7 @@ custom_minimum_size = Vector2(70, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_qhj4n")
+texture = ExtResource("5_bayhp")
 expand_mode = 1
 stretch_mode = 4
 
@@ -73,18 +117,127 @@ custom_minimum_size = Vector2(882, 132)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-theme_override_constants/separation = 24
+theme_override_constants/separation = 72
 
-[node name="SubjectImage" type="TextureRect" parent="Subject" unique_id=764336011]
+[node name="SubjectEnergy" type="VBoxContainer" parent="Subject" unique_id=2009349972]
+layout_mode = 2
+alignment = 1
+
+[node name="SubjectImage" type="TextureRect" parent="Subject/SubjectEnergy" unique_id=764336011]
 texture_filter = 1
+custom_minimum_size = Vector2(82.5, 72)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("4_uoemc")
+expand_mode = 1
 stretch_mode = 4
+
+[node name="EnergyLabel" type="RichTextLabel" parent="Subject/SubjectEnergy" unique_id=2108364529]
+texture_filter = 1
+custom_minimum_size = Vector2(82, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 12
+text = "Daily Energy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="Subject/SubjectEnergy" unique_id=578000601]
+custom_minimum_size = Vector2(82, 32)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_pgqv6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g5rga")
+max_value = 3.0
+step = 0.5
+value = 3.0
+show_percentage = false
+
+[node name="EnergyCells" type="HBoxContainer" parent="Subject/SubjectEnergy/EnergyBar" unique_id=1856198550]
+custom_minimum_size = Vector2(81, 0)
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 32.0
+theme_override_constants/separation = 0
+
+[node name="cell" type="Panel" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells" unique_id=1958413580]
+custom_minimum_size = Vector2(27.99, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdqld")
+
+[node name="energy_icon" type="TextureRect" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells/cell" unique_id=692979263]
+material = SubResource("ShaderMaterial_pgqv6")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -9.090908
+offset_right = 5.0
+offset_bottom = 9.090908
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_bayhp")
+expand_mode = 1
+
+[node name="cell2" type="Panel" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells" unique_id=658557688]
+custom_minimum_size = Vector2(27.99, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdqld")
+
+[node name="energy_icon" type="TextureRect" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells/cell2" unique_id=843601810]
+material = SubResource("ShaderMaterial_pgqv6")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -9.090908
+offset_right = 5.0
+offset_bottom = 9.090908
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_bayhp")
+expand_mode = 1
+
+[node name="cell3" type="Panel" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells" unique_id=24701896]
+custom_minimum_size = Vector2(27.99, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdqld")
+
+[node name="energy_icon" type="TextureRect" parent="Subject/SubjectEnergy/EnergyBar/EnergyCells/cell3" unique_id=1553410041]
+material = SubResource("ShaderMaterial_pgqv6")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -9.090908
+offset_right = 5.0
+offset_bottom = 9.090908
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_bayhp")
+expand_mode = 1
 
 [node name="SubjextData" type="VBoxContainer" parent="Subject" unique_id=1587575655]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Subject/SubjextData" unique_id=1274887082]
 layout_mode = 2
@@ -164,7 +317,7 @@ custom_minimum_size = Vector2(320, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="IntellectLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/IntellectStat" unique_id=809673351]
 texture_filter = 1
@@ -185,7 +338,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
-min_value = -50.0
 value = 75.0
 show_percentage = false
 
@@ -209,7 +361,7 @@ custom_minimum_size = Vector2(320, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="AestheticLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/AestheticStat" unique_id=908578601]
 texture_filter = 1
@@ -230,7 +382,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_4orbe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bayhp")
-min_value = -50.0
 value = 29.0
 show_percentage = false
 
@@ -254,7 +405,7 @@ custom_minimum_size = Vector2(320, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="HealthLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/HardStats/HealthStat" unique_id=789223867]
 texture_filter = 1
@@ -305,7 +456,7 @@ custom_minimum_size = Vector2(33, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="VolatilityLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/VolatilityStat" unique_id=78134506]
 texture_filter = 1
@@ -350,7 +501,7 @@ custom_minimum_size = Vector2(33, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="AffectLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/AffectStat" unique_id=401621172]
 texture_filter = 1
@@ -395,7 +546,7 @@ custom_minimum_size = Vector2(33, 33)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 24
 
 [node name="NatureLabel" type="RichTextLabel" parent="Subject/SubjextData/SubjectStats/SoftStats/NatureStat" unique_id=257596365]
 texture_filter = 1

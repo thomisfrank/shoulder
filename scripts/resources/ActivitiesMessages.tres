@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ActivityMessagesPool" format=3 uid="uid://dodoygcl4sl8k"]
+
+[ext_resource type="Script" uid="uid://bxt288wewh5dy" path="res://scripts/resources/ActiviesMessagesPool.gd" id="1_vo4cb"]
+
+[resource]
+script = ExtResource("1_vo4cb")
+metadata/_custom_type_script = "uid://bxt288wewh5dy"

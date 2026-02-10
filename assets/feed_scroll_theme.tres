@@ -9,31 +9,13 @@ load_path = "res://.godot/imported/UP.png-ffee94c4b89ce7797a4eaa27182a43e8.ctex"
 load_path = "res://.godot/imported/DOWN.png-a14f60ff57b6e7cb60312619c8d37467.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j338"]
-bg_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+bg_color = Color(0.4702201, 0.41403785, 0.9607615, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6aww8"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tian8"]
+bg_color = Color(0.6117647, 0.6039216, 0.9843137, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wf5t"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.75, 0.75, 0.75, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo328"]
+bg_color = Color(0.39636946, 0.2964157, 0.9120228, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxcd"]
 bg_color = Color(0.6117647, 0.6039216, 0.9843137, 0.54901963)
@@ -68,7 +50,7 @@ VScrollBar/icons/increment = SubResource("CompressedTexture2D_fo328")
 VScrollBar/icons/increment_highlight = SubResource("ImageTexture_tian8")
 VScrollBar/icons/increment_pressed = SubResource("ImageTexture_tian8")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4j338")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_6aww8")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_1wf5t")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_tian8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_fo328")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ooxcd")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_lh8ky")

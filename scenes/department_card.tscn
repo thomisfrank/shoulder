@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://ciqn7eq046lne"]
 
 [ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_0a6b4"]
+[ext_resource type="Shader" uid="uid://bwyigpq6iodgm" path="res://scripts/shaders/department_card.gdshader" id="1_o7glu"]
 [ext_resource type="Texture2D" uid="uid://dj22yglh76khc" path="res://assets/UI/AngelIcon.png" id="2_o7glu"]
+[ext_resource type="Script" uid="uid://dqmmlp7rynumq" path="res://scripts/department_card.gd" id="2_v5kjl"]
 [ext_resource type="Texture2D" uid="uid://ddsno1np8oosq" path="res://assets/UI/DevilIcon.png" id="3_v5kjl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtito"]
+shader = ExtResource("1_o7glu")
+shader_parameter/speed = 4.0
+shader_parameter/amplitude = 8.0
+shader_parameter/frequency = 2.0
+shader_parameter/margin = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_src81"]
+resource_local_to_scene = true
 bg_color = Color(1, 0.6431373, 0.9529412, 1)
 corner_radius_top_left = 80
 corner_radius_top_right = 80
@@ -29,12 +37,22 @@ border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
 corner_radius_bottom_right = 80
 corner_radius_bottom_left = 80
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5kjl"]
+bg_color = Color(0.3019608, 0.13333334, 0.72156864, 0.4117647)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
 [node name="DepartmentCard" type="PanelContainer" unique_id=1169117610]
 material = SubResource("ShaderMaterial_gtito")
 custom_minimum_size = Vector2(500, 650)
 offset_right = 500.0
 offset_bottom = 650.0
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_src81")
+script = ExtResource("2_v5kjl")
 
 [node name="Angel" type="VBoxContainer" parent="." unique_id=1729845267]
 layout_mode = 2
@@ -143,6 +161,15 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_77kb2")
 
+[node name="scrim" type="Panel" parent="." unique_id=1499291581]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5kjl")
+
 [node name="Button" type="Button" parent="." unique_id=1607613372]
 layout_mode = 2
 flat = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

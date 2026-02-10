@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0amoclnjvogc"]
 
 [ext_resource type="PackedScene" uid="uid://bvl68qqadpqq0" path="res://scenes/background.tscn" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://c24m78rcgbp6d" path="res://scenes/main.gd" id="1_choun"]
+[ext_resource type="Script" uid="uid://c24m78rcgbp6d" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="PackedScene" uid="uid://c01bs7xy0imxm" path="res://scenes/header.tscn" id="2_sugp2"]
 [ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://x1n7iqwvwd56" path="res://scenes/leisure_activities.tscn" id="3_sugp2"]
@@ -11,6 +11,23 @@
 [ext_resource type="Texture2D" uid="uid://dfd14fkx6wm0o" path="res://assets/UI/LongButtonDisabled.png" id="7_85g3d"]
 [ext_resource type="Texture2D" uid="uid://kjavr4y2mt6o" path="res://assets/UI/LongButtonHover.png" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://cvbyukahl7rlt" path="res://scenes/feed.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c470g7yvkc4rp" path="res://scenes/milestone.tscn" id="12_eb6dy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6dy"]
+resource_local_to_scene = true
+bg_color = Color(0.9817441, 0.9607032, 0.9457794, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trceg"]
+resource_local_to_scene = true
+bg_color = Color(1, 0.6431373, 0.9529412, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbgi4"]
 texture = ExtResource("4_jyhfs")
@@ -32,7 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_choun")
-metadata/_edit_horizontal_guides_ = [250.0, 2130.0]
 
 [node name="Background" parent="." unique_id=238670829 instance=ExtResource("1_0wfyh")]
 layout_mode = 0
@@ -47,14 +63,14 @@ mouse_filter = 2
 
 [node name="Header" parent="." unique_id=1741394942 instance=ExtResource("2_sugp2")]
 layout_mode = 1
-anchor_left = 0.0016963528
-anchor_right = 0.0016963528
+anchors_preset = 0
+anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 1179.0
 offset_bottom = 230.0
 grow_horizontal = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1308280260]
+[node name="MainContent" type="VBoxContainer" parent="." unique_id=1308280260]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -66,13 +82,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="Feed" parent="VBoxContainer" unique_id=868917419 instance=ExtResource("9_85g3d")]
+[node name="Feed" parent="MainContent" unique_id=868917419 instance=ExtResource("9_85g3d")]
 custom_minimum_size = Vector2(1179, 1545)
 layout_mode = 2
 job_messages_resource = ExtResource("5_eb6dy")
 feed_height_min = 1595.0
 
-[node name="MessageFeedScrolling" parent="VBoxContainer/Feed" index="1" unique_id=512820941]
+[node name="MessageFeedScrolling" parent="MainContent/Feed" index="0" unique_id=512820941]
 custom_minimum_size = Vector2(1056, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -83,37 +99,50 @@ offset_bottom = 1542.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MessageFeed" parent="VBoxContainer/Feed/MessageFeedScrolling" index="0" unique_id=438092332]
+[node name="MessageFeed" parent="MainContent/Feed/MessageFeedScrolling" index="0" unique_id=438092332]
 size_flags_horizontal = 3
 
-[node name="BottomTray" type="VBoxContainer" parent="VBoxContainer" unique_id=2008639810]
+[node name="loading" parent="MainContent/Feed/MessageFeedScrolling/MessageFeed" index="0" unique_id=1791276562]
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Department Cards" parent="MainContent/Feed/MessageFeedScrolling" index="1" unique_id=1707866552]
+alignment = 2
+
+[node name="AngelDepartmentCard" parent="MainContent/Feed/MessageFeedScrolling/Department Cards" index="0" unique_id=1169117610]
+theme_override_styles/panel = SubResource("StyleBoxFlat_eb6dy")
+
+[node name="DevilDepartmentCard" parent="MainContent/Feed/MessageFeedScrolling/Department Cards" index="1" unique_id=1185550334]
+theme_override_styles/panel = SubResource("StyleBoxFlat_trceg")
+
+[node name="BottomTray" type="VBoxContainer" parent="MainContent" unique_id=2008639810]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 2
 
-[node name="Divider" type="HBoxContainer" parent="VBoxContainer/BottomTray" unique_id=745129262]
+[node name="Divider" type="HBoxContainer" parent="MainContent/BottomTray" unique_id=745129262]
 custom_minimum_size = Vector2(1179, 20)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 0
 
-[node name="L" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=756161019]
+[node name="L" type="ColorRect" parent="MainContent/BottomTray/Divider" unique_id=756161019]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 color = Color(0.3019608, 0.13333334, 0.72156864, 1)
 
-[node name="line" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=881431552]
+[node name="line" type="ColorRect" parent="MainContent/BottomTray/Divider" unique_id=881431552]
 custom_minimum_size = Vector2(1139, 4)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.3019608, 0.13333334, 0.72156864, 1)
 
-[node name="R" type="ColorRect" parent="VBoxContainer/BottomTray/Divider" unique_id=244694479]
+[node name="R" type="ColorRect" parent="MainContent/BottomTray/Divider" unique_id=244694479]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 color = Color(0.3019608, 0.13333334, 0.72156864, 1)
 
-[node name="NextDay" type="Button" parent="VBoxContainer/BottomTray" unique_id=330960935]
+[node name="NextDay" type="Button" parent="MainContent/BottomTray" unique_id=330960935]
 custom_minimum_size = Vector2(1090, 170)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -132,17 +161,17 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_ya4ey")
 text = "Next Day"
 metadata/_edit_use_anchors_ = true
 
-[node name="LeisureActivities" parent="VBoxContainer/BottomTray" unique_id=1159599601 instance=ExtResource("3_sugp2")]
+[node name="LeisureActivities" parent="MainContent/BottomTray" unique_id=1159599601 instance=ExtResource("3_sugp2")]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="LeisureActivitiesHeaderBar" parent="VBoxContainer/BottomTray/LeisureActivities" index="0" unique_id=1040033905]
+[node name="LeisureActivitiesHeaderBar" parent="MainContent/BottomTray/LeisureActivities" index="0" unique_id=1040033905]
 size_flags_vertical = 4
 
-[node name="Body" parent="VBoxContainer/BottomTray/LeisureActivities" index="1" unique_id=761732660]
+[node name="Body" parent="MainContent/BottomTray/LeisureActivities" index="1" unique_id=761732660]
 size_flags_vertical = 4
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=685945180]
+[node name="S P A C E R" type="ColorRect" parent="." unique_id=685945180]
 visible = false
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
@@ -159,9 +188,12 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(1, 0, 1, 1)
 
-[connection signal="pressed" from="VBoxContainer/BottomTray/NextDay" to="." method="_on_next_day_pressed"]
+[node name="Milestone" parent="." unique_id=746310637 instance=ExtResource("12_eb6dy")]
+visible = false
+layout_mode = 1
 
-[editable path="VBoxContainer/Feed"]
-[editable path="VBoxContainer/Feed/DepartmentFeed/MessageBox"]
-[editable path="VBoxContainer/Feed/DepartmentFeed/Department Cards/DevilDepartmentCard"]
-[editable path="VBoxContainer/BottomTray/LeisureActivities"]
+[connection signal="pressed" from="MainContent/BottomTray/NextDay" to="." method="_on_next_day_pressed"]
+
+[editable path="MainContent/Feed"]
+[editable path="MainContent/Feed/MessageFeedScrolling/Department Cards/DevilDepartmentCard"]
+[editable path="MainContent/BottomTray/LeisureActivities"]

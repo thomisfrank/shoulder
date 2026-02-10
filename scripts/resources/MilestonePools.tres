@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MilestonesPools" format=3 uid="uid://cn6lp66h75xtf"]
+
+[ext_resource type="Script" uid="uid://bwa8itq5wniyy" path="res://scripts/resources/MilestonesPools.gd" id="1_vif07"]
+
+[resource]
+script = ExtResource("1_vif07")
+metadata/_custom_type_script = "uid://bwa8itq5wniyy"

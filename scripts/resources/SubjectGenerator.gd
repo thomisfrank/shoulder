@@ -12,12 +12,14 @@ const JOB_HAZARD_RANK := { "Football Player": 9, "Carpenter": 8, "Farmer": 8, "P
 	"Pianist": 3,	"Flautist": 3,	"Opera Singer": 3,	"Student": 2,	"Accountant": 2,	"Investor": 2,
 	"Engineer": 2,	"News Anchor": 2,	"Therapist": 2,	"Unemployed": 1,}
 
+var current_subject: SubjectResource
 
 func _ready():
-	generate_subject()
 	return
 	
 
+func get_subject() -> SubjectResource:
+	return current_subject
 
 func generate_subject() -> SubjectResource:
 	var subject := SubjectResource.new()
@@ -25,8 +27,8 @@ func generate_subject() -> SubjectResource:
 	generate_stats(subject)
 	generate_job(subject)
 	set_health_from_job(subject)
-	set_ailment(subject)
-	return subject
+	current_subject = subject
+	return current_subject
 
 
 func generate_name(subject: SubjectResource) -> void:
@@ -42,11 +44,11 @@ func generate_name(subject: SubjectResource) -> void:
 	
 
 func generate_stats(subject: SubjectResource) -> void:
-	subject.Intellect = randi_range(-50, 100)
-	subject.Aesthetic = randi_range(-50, 100)
-	subject.Volatility = randi_range(0, 50)
-	subject.Affect = randi_range(0, 50)
-	subject.Nature = randi_range(0, 50)
+	subject.Intellect = randi_range(20, 100)
+	subject.Aesthetic = randi_range(20, 100)
+	subject.Volatility = randi_range(20, 50)
+	subject.Affect = randi_range(20, 50)
+	subject.Nature = randi_range(20, 50)
 	print("Subject Stats: ", "Intellect:  ", subject.Intellect, " ",
 	"Aesthetic:  ", subject.Aesthetic, " ")
 	set_stat_keywords(subject)
@@ -91,24 +93,4 @@ func set_health_from_job(subject: SubjectResource) -> void:
 	var max_health: int = 90 - (rank * 6)
 	var min_health: int = 90 - (rank * 10)
 	subject.Health = randi_range(min_health, max_health)
-	return
-
-
-func set_ailment(subject: SubjectResource) -> void:
-	if subject.Health < 0:
-		print("Is Dead")
-	elif subject.Health < 10:
-		subject.Ailment = ailment_info.job_pool.slice(0, 7).pick_random()
-		print("Has: ", subject.Ailment, " ")
-	elif subject.Health < 20:
-		subject.Ailment = ailment_info.job_pool.slice(7, 12).pick_random()
-		print("Has: ", subject.Ailment, " ")
-	elif subject.Health < 30:
-		subject.Ailment = ailment_info.job_pool.slice(12, 17).pick_random()
-		print("Has: ", subject.Ailment, " ")
-	elif subject.Health < 40:
-		subject.Ailment = ailment_info.job_pool.slice(17, 22).pick_random()
-		print("Has: ", subject.Ailment, " ")
-	else:
-		print("Is Healthy")
 	return

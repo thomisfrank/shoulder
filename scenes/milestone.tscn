@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://c470g7yvkc4rp"]
+
+[ext_resource type="FontFile" uid="uid://3oo231k1kk75" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_dvbc1"]
+[ext_resource type="Script" uid="uid://bkpmseigut6ea" path="res://scripts/milestone.gd" id="1_g10v4"]
+[ext_resource type="Texture2D" uid="uid://hyenri3iusvc" path="res://assets/UI/Button.png" id="2_u51fk"]
+[ext_resource type="Texture2D" uid="uid://bjergo5oov8q4" path="res://assets/UI/ButtonPressed.png" id="3_c3yxn"]
+[ext_resource type="Texture2D" uid="uid://dg7ejdjvblidy" path="res://assets/UI/ButtonHover.png" id="4_tf7qr"]
+[ext_resource type="Texture2D" uid="uid://w08u0vupovpx" path="res://assets/UI/skip.png" id="5_o4a5i"]
+[ext_resource type="FontFile" uid="uid://cqnbh32piadtl" path="res://assets/fonts/DotGothic16-Regular.ttf" id="6_g10v4"]
+[ext_resource type="Texture2D" uid="uid://hfe4jado8spr" path="res://assets/UI/LongButton.png" id="7_o4a5i"]
+[ext_resource type="Texture2D" uid="uid://bnmxqtt2fe506" path="res://assets/UI/LongButtonPressed.png" id="8_g10v4"]
+[ext_resource type="Texture2D" uid="uid://kjavr4y2mt6o" path="res://assets/UI/LongButtonHover.png" id="9_enx1p"]
+[ext_resource type="Texture2D" uid="uid://dfd14fkx6wm0o" path="res://assets/UI/LongButtonDisabled.png" id="10_p1ih4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enx1p"]
+bg_color = Color(0.99607843, 0.9254902, 0.78431374, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1ih4"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+bg_color = Color(0.99607843, 0.9254902, 0.78431374, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3ehw"]
+content_margin_right = 24.0
+bg_color = Color(0.9137255, 0.81960785, 0.92156863, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdfs"]
+texture = ExtResource("2_u51fk")
+texture_margin_bottom = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdyhu"]
+texture = ExtResource("3_c3yxn")
+texture_margin_bottom = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4asan"]
+texture = ExtResource("4_tf7qr")
+texture_margin_bottom = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3ehw"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 12.0
+texture = ExtResource("7_o4a5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mn4i5"]
+texture = ExtResource("8_g10v4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xktnf"]
+texture = ExtResource("9_enx1p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wno5a"]
+texture = ExtResource("10_p1ih4")
+
+[node name="Milestone" type="Control" unique_id=746310637]
+custom_minimum_size = Vector2(1179, 2556)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g10v4")
+
+[node name="Scrim" type="ColorRect" parent="." unique_id=837583579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3019608, 0.13333334, 0.72156864, 0.60784316)
+
+[node name="Milestone_Guidance" type="VBoxContainer" parent="." unique_id=1781222326]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -942.5
+offset_right = 590.0
+offset_bottom = 942.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Milestone" type="Control" parent="Milestone_Guidance" unique_id=499224625]
+custom_minimum_size = Vector2(0, 1095)
+layout_mode = 2
+
+[node name="decorative" type="Panel" parent="Milestone_Guidance/Milestone" unique_id=1889803246]
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -521.5
+offset_right = 522.0
+offset_bottom = 478.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_enx1p")
+
+[node name="Frame" type="PanelContainer" parent="Milestone_Guidance/Milestone" unique_id=209376938]
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -489.5
+offset_right = 490.0
+offset_bottom = 510.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_p1ih4")
+
+[node name="Milestone" type="VBoxContainer" parent="Milestone_Guidance/Milestone/Frame" unique_id=910573732]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Header" type="PanelContainer" parent="Milestone_Guidance/Milestone/Frame/Milestone" unique_id=1496585036]
+custom_minimum_size = Vector2(936, 216)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3ehw")
+
+[node name="Title" type="RichTextLabel" parent="Milestone_Guidance/Milestone/Frame/Milestone/Header" unique_id=5122942]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("1_dvbc1")
+theme_override_font_sizes/normal_font_size = 64
+text = "Milestone"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skip" type="Button" parent="Milestone_Guidance/Milestone/Frame/Milestone/Header" unique_id=794074962]
+texture_filter = 1
+custom_minimum_size = Vector2(165, 165)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_constants/h_separation = 1
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_ycdfs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kdyhu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4asan")
+icon = ExtResource("5_o4a5i")
+icon_alignment = 1
+
+[node name="Content" type="RichTextLabel" parent="Milestone_Guidance/Milestone/Frame/Milestone" unique_id=363691271]
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_fonts/normal_font = ExtResource("6_g10v4")
+theme_override_font_sizes/normal_font_size = 46
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Guidance" type="VBoxContainer" parent="Milestone_Guidance" unique_id=426533966]
+custom_minimum_size = Vector2(1180, 0)
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="GuidanceHeader" type="RichTextLabel" parent="Milestone_Guidance/Guidance" unique_id=357996238]
+texture_filter = 1
+custom_minimum_size = Vector2(1179, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_g10v4")
+theme_override_font_sizes/normal_font_size = 46
+text = "Guidance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GuidanceChoices" type="VBoxContainer" parent="Milestone_Guidance/Guidance" unique_id=135025607]
+custom_minimum_size = Vector2(1090, 0)
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="GuidanceChoice" type="Button" parent="Milestone_Guidance/Guidance/GuidanceChoices" unique_id=1727440004]
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3ehw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mn4i5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xktnf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wno5a")
+autowrap_mode = 3
+
+[node name="GuidanceChoice2" type="Button" parent="Milestone_Guidance/Guidance/GuidanceChoices" unique_id=1627640732]
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3ehw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mn4i5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xktnf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wno5a")
+autowrap_mode = 3
+
+[node name="GuidanceChoice3" type="Button" parent="Milestone_Guidance/Guidance/GuidanceChoices" unique_id=1217676695]
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3ehw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mn4i5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xktnf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wno5a")
+autowrap_mode = 3
+
+[node name="GuidanceChoice4" type="Button" parent="Milestone_Guidance/Guidance/GuidanceChoices" unique_id=379057820]
+visible = false
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3ehw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mn4i5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xktnf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wno5a")
+autowrap_mode = 3
+
+[node name="GuidanceChoice5" type="Button" parent="Milestone_Guidance/Guidance/GuidanceChoices" unique_id=965368090]
+visible = false
+custom_minimum_size = Vector2(1090, 170)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3019608, 0.13333334, 0.72156864, 1)
+theme_override_colors/font_disabled_color = Color(0.3019608, 0.13333334, 0.72156864, 0.19607843)
+theme_override_fonts/font = ExtResource("1_dvbc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3ehw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mn4i5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xktnf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wno5a")
+autowrap_mode = 3

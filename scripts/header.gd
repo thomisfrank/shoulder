@@ -17,6 +17,23 @@ extends PanelContainer
 @onready var SubjectVolatilityStatBar: ProgressBar = $Subject/SubjextData/SubjectStats/SoftStats/VolatilityStat/StatBar
 @onready var SubjectAffectStatBar: ProgressBar = $Subject/SubjextData/SubjectStats/SoftStats/AffectStat/StatBar
 @onready var SubjectNatureStatBar: ProgressBar = $Subject/SubjextData/SubjectStats/SoftStats/NatureStat/StatBar
+@onready var EnergyBar: ProgressBar = $Subject/SubjectEnergy/EnergyBar
+@onready var EnergyIconCell1: TextureRect = $Subject/SubjectEnergy/EnergyBar/EnergyCells/cell/energy_icon
+@onready var EnergyIconCell2: TextureRect = $Subject/SubjectEnergy/EnergyBar/EnergyCells/cell2/energy_icon
+@onready var EnergyIconCell3: TextureRect = $Subject/SubjectEnergy/EnergyBar/EnergyCells/cell3/energy_icon
+@onready var DepartmentBadge: TextureRect = $Frame/DepartmentBadge
+@onready var SubjectContainer: Control = $Subject
+
+@export var ailments_resource: AilmentPool = preload("res://scripts/resources/AilmentsPool.tres")
+
+const MAX_ENERGY := 3
+const MAX_STAT_VALUE := 100
+const AILMENT_THRESHOLD := 0.2
+const INVALID_STAT_VALUE := -999999
+var current_energy := MAX_ENERGY
+
+const ANGEL_BADGE := preload("res://assets/UI/AngelIcon.png")
+const DEVIL_BADGE := preload("res://assets/UI/DevilIcon.png")
 
 func load_in_subject(resource_in: SubjectResource):
 	SubjectName.text = resource_in.name
@@ -59,11 +76,110 @@ func _nature_keyword(value: int) -> String:
 	return "Anti-Social"
 
 func _ready() -> void:
-	var generator := get_node_or_null("/root/SubjectGenerator")
-	if generator:
-		SubjectInfo = generator.generate_subject()
-	if SubjectInfo == null:
-		push_error("SubjectInfo is null in header.gd")
-		return
-	load_in_subject(SubjectInfo)
+	if DepartmentBadge:
+		DepartmentBadge.texture = null
+	if SubjectContainer:
+		SubjectContainer.visible = false
+	if SubjectInfo != null:
+		load_in_subject(SubjectInfo)
+		reset_energy()
 	return
+
+func set_subject(resource_in: SubjectResource) -> void:
+	SubjectInfo = resource_in
+	if SubjectInfo == null:
+		return
+	if SubjectContainer:
+		SubjectContainer.visible = true
+	load_in_subject(SubjectInfo)
+	reset_energy()
+
+func set_department_badge(department: String) -> void:
+	if DepartmentBadge == null:
+		return
+	var dept_lower := department.to_lower()
+	if dept_lower == "angel":
+		DepartmentBadge.texture = ANGEL_BADGE
+	elif dept_lower == "devil":
+		DepartmentBadge.texture = DEVIL_BADGE
+
+func reset_energy() -> void:
+	current_energy = MAX_ENERGY
+	_apply_energy_state()
+
+func try_consume_energy() -> bool:
+	if current_energy <= 0:
+		return false
+	current_energy -= 1
+	_apply_energy_state()
+	return true
+
+func _apply_energy_state() -> void:
+	EnergyBar.value = current_energy
+	EnergyIconCell3.visible = current_energy >= 3
+	EnergyIconCell2.visible = current_energy >= 2
+	EnergyIconCell1.visible = current_energy >= 1
+
+func apply_stat_cost(stat_name: String, cost: int) -> String:
+	if SubjectInfo == null:
+		return ""
+	match stat_name:
+		"Intellect":
+			SubjectInfo.Intellect -= cost
+			SubjectIntellectStatLabel.text = str(SubjectInfo.Intellect)
+			SubjectIntellectStatBar.value = SubjectInfo.Intellect
+		"Aesthetic":
+			SubjectInfo.Aesthetic -= cost
+			SubjectAestheticStatLabel.text = str(SubjectInfo.Aesthetic)
+			SubjectAestheticStatBar.value = SubjectInfo.Aesthetic
+		"Health":
+			SubjectInfo.Health -= cost
+			SubjectHelthStatLabel.text = str(SubjectInfo.Health)
+			SubjectHealthStatBar.value = SubjectInfo.Health
+		"Volatility":
+			SubjectInfo.Volatility -= cost
+			SubjectVolatilityStatLabel.text = _volatility_keyword(SubjectInfo.Volatility)
+			SubjectVolatilityStatBar.value = SubjectInfo.Volatility
+		"Affect":
+			SubjectInfo.Affect -= cost
+			SubjectAffectStatLabel.text = _affect_keyword(SubjectInfo.Affect)
+			SubjectAffectStatBar.value = SubjectInfo.Affect
+		_:
+			return ""
+
+	return _maybe_apply_ailment(stat_name)
+
+func _maybe_apply_ailment(stat_name: String) -> String:
+	if SubjectInfo == null or ailments_resource == null:
+		return ""
+	if SubjectInfo.Ailment != "":
+		return ""
+	var current_value := _get_stat_value(stat_name)
+	if current_value == INVALID_STAT_VALUE:
+		return ""
+	var threshold_value := int(MAX_STAT_VALUE * AILMENT_THRESHOLD)
+	if current_value >= threshold_value:
+		return ""
+	var pools: Dictionary = ailments_resource.ailment_pools
+	var options: Array = pools.get(stat_name, []) as Array
+	if options.is_empty():
+		return ""
+	var ailment := options.pick_random() as String
+	SubjectInfo.Ailment = ailment
+	return ailment
+
+func _get_stat_value(stat_name: String) -> int:
+	match stat_name:
+		"Intellect":
+			return SubjectInfo.Intellect
+		"Aesthetic":
+			return SubjectInfo.Aesthetic
+		"Health":
+			return SubjectInfo.Health
+		"Volatility":
+			return SubjectInfo.Volatility
+		"Affect":
+			return SubjectInfo.Affect
+		"Nature":
+			return SubjectInfo.Nature
+	return INVALID_STAT_VALUE

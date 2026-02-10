@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="CostMessagesPool" format=3 uid="uid://8k8twhw3owkl"]
+
+[ext_resource type="Script" uid="uid://d1hgush3wjcxd" path="res://scripts/resources/CostMessagesPool.gd" id="1_onv40"]
+
+[resource]
+script = ExtResource("1_onv40")

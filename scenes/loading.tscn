@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ch0d5gqp7ae0s"]
+
+[ext_resource type="Texture2D" uid="uid://bbjjlfsjwldsq" path="res://assets/UI/loading00.png" id="2_yt702"]
+[ext_resource type="Texture2D" uid="uid://fywpxt3e1c2q" path="res://assets/UI/loading02.png" id="3_2ytni"]
+[ext_resource type="Texture2D" uid="uid://d2eeinss1mu3u" path="res://assets/UI/loading01.png" id="4_nxo4k"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_c856a"]
+frames = 3
+speed_scale = 0.1
+frame_0/texture = ExtResource("2_yt702")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("3_2ytni")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("4_nxo4k")
+frame_2/duration = 0.05
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cqd5"]
+texture = SubResource("AnimatedTexture_c856a")
+
+[node name="loading" type="Panel" unique_id=1791276562]
+texture_filter = 1
+custom_minimum_size = Vector2(320, 90)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3cqd5")

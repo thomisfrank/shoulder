@@ -192,3 +192,8 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [connection signal="pressed" from="LeisureActivitiesHeaderBar/CaretButton" to="." method="_on_caret_button_pressed"]
+[connection signal="pressed" from="Body/Buttons/PhysicalButton" to="." method="_on_physical_button_pressed"]
+[connection signal="pressed" from="Body/Buttons/CreativeButton" to="." method="_on_creative_button_pressed"]
+[connection signal="pressed" from="Body/Buttons/CognitiveButton" to="." method="_on_cognitive_button_pressed"]
+[connection signal="pressed" from="Body/Buttons/MediaButton" to="." method="_on_media_button_pressed"]
+[connection signal="pressed" from="Body/Buttons/RelaxationButton" to="." method="_on_relaxation_button_pressed"]
