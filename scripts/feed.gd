@@ -13,6 +13,8 @@ const MESSAGE_FEED_GAP_MAX := 250.0
 const COST_STATS := ["Intellect", "Aesthetic", "Health", "Volatility", "Affect"]
 const BUTTON_MESSAGE_DELAY := 0.3
 const MILESTONE_CHANCE := 0.4
+const ANGEL_CARD_BG := Color(0.98039216, 0.98039216, 0.98039216, 1)
+const DEVIL_CARD_BG := Color(1, 0.6431373, 0.9529412, 1)
 
 @export var job_messages_resource: JobMessagesPool
 @export var cost_messages_resource: CostMessagesPool
@@ -85,7 +87,7 @@ func next_day_pressed() -> void:
 	await get_tree().create_timer(1.5).timeout
 	_post_cost_message()
 	scroll_to_bottom()
-	_maybe_trigger_milestone()
+	_maybe_trigger_job_milestone()
 
 func scroll_to_bottom() -> void:
 	await get_tree().process_frame
@@ -127,7 +129,7 @@ func post_tired_message() -> void:
 	var message_label := message_item as RichTextLabel
 	if message_label:
 		var subject_name := subject_info.name if subject_info else "They"
-		message_label.text = "%s is too tired to do anythign else today." % subject_name
+		message_label.text = "%s is too tired to do anything else today." % subject_name
 	_play_new_message_sound()
 	scroll_to_bottom()
 
@@ -154,6 +156,9 @@ func _post_cost_message() -> void:
 			var new_ailment: String = header.apply_stat_cost(stat_name, cost_value) as String
 			if new_ailment != "":
 				_post_ailment_message(new_ailment, false)
+	var manager := get_node_or_null("/root/Gamemanager")
+	if manager and manager.has_method("evaluate_run_state"):
+		manager.evaluate_run_state(subject_info)
 
 func _post_ailment_message(ailment: String, is_still_dealing: bool) -> void:
 	var message_item = MESSAGE.instantiate()
@@ -197,29 +202,44 @@ func show_department_cards() -> void:
 	if department_cards.get_parent() != message_box:
 		department_cards.get_parent().remove_child(department_cards)
 		message_box.add_child(department_cards)
-	if department_cards.get_child_count() == 0 and DEPARTMENT_CARD_SCENE:
+	for child in department_cards.get_children():
+		department_cards.remove_child(child)
+		child.queue_free()
+	if DEPARTMENT_CARD_SCENE:
 		var angel_card := DEPARTMENT_CARD_SCENE.instantiate()
 		var devil_card := DEPARTMENT_CARD_SCENE.instantiate()
 		if angel_card.has_method("set_department"):
 			angel_card.set_department("Angel")
 		if devil_card.has_method("set_department"):
 			devil_card.set_department("Devil")
+		_apply_department_card_panel_style(angel_card, ANGEL_CARD_BG)
+		_apply_department_card_panel_style(devil_card, DEVIL_CARD_BG)
+		if angel_card.has_method("set_dimmed"):
+			angel_card.set_dimmed(false)
+		if devil_card.has_method("set_dimmed"):
+			devil_card.set_dimmed(false)
+		if angel_card.has_method("set_interactive"):
+			angel_card.set_interactive(true)
+		if devil_card.has_method("set_interactive"):
+			devil_card.set_interactive(true)
 		_connect_department_card(angel_card)
 		_connect_department_card(devil_card)
 		department_cards.add_child(angel_card)
 		department_cards.add_child(devil_card)
-	else:
-		for child in department_cards.get_children():
-			if child.has_method("set_department"):
-				var name_lower := String(child.name).to_lower()
-				if name_lower.find("angel") != -1:
-					child.set_department("Angel")
-				elif name_lower.find("devil") != -1:
-					child.set_department("Devil")
-			_connect_department_card(child)
 	department_cards.visible = true
 	_play_new_message_sound()
 	scroll_to_bottom()
+
+func _apply_department_card_panel_style(card: Node, color: Color) -> void:
+	if card == null:
+		return
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = color
+	panel_style.corner_radius_top_left = 80
+	panel_style.corner_radius_top_right = 80
+	panel_style.corner_radius_bottom_right = 80
+	panel_style.corner_radius_bottom_left = 80
+	card.set("theme_override_styles/panel", panel_style)
 
 func _connect_department_card(card: Node) -> void:
 	if card == null or not card.has_signal("department_chosen"):
@@ -251,7 +271,7 @@ func hide_loading() -> void:
 	if loading_panel:
 		loading_panel.visible = false
 
-func _maybe_trigger_milestone(activity_type := "") -> void:
+func _maybe_trigger_milestone(activity_type: String) -> void:
 	if _milestone_pending:
 		return
 	if rng.randf() > MILESTONE_CHANCE:
@@ -268,6 +288,25 @@ func _maybe_trigger_milestone(activity_type := "") -> void:
 		main.add_child(milestone_instance)
 		if milestone_instance.has_method("trigger"):
 			milestone_instance.trigger(activity_type)
+	_milestone_pending = false
+
+func _maybe_trigger_job_milestone() -> void:
+	if _milestone_pending:
+		return
+	if rng.randf() > MILESTONE_CHANCE:
+		return
+	_milestone_pending = true
+	var main := get_tree().current_scene
+	if main and main.has_node("Milestone"):
+		var milestone := main.get_node("Milestone")
+		if milestone and milestone.has_method("trigger_job"):
+			milestone.trigger_job()
+	elif main and MILESTONE_SCENE:
+		var milestone_instance := MILESTONE_SCENE.instantiate()
+		milestone_instance.name = "Milestone"
+		main.add_child(milestone_instance)
+		if milestone_instance.has_method("trigger_job"):
+			milestone_instance.trigger_job()
 	_milestone_pending = false
 
 func _play_new_message_sound() -> void:

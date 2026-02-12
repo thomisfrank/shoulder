@@ -260,1246 +260,596 @@ func get_activity_milestone_with_id(activity: String, subject: SubjectResource) 
 
 @export var angel_guidance_by_id: Dictionary = {
 	"MS-001": [
-		"Be transparent and share what you know. Ask for input before deciding. Then follow through.",
-		"Ask for input before deciding. Then follow through. Be transparent and share what you know.",
-		"Then follow through. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-002": [
-		"Choose the safest option for others. Ask for input before deciding. Then follow through.",
-		"Document what happened. Then follow through. Be transparent and share what you know.",
-		"And keep people safe. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-003": [
-		"Act with empathy and patience. Ask for input before deciding. Then follow through.",
-		"Seek help from someone responsible. Then follow through. Be transparent and share what you know.",
-		"Then own the outcome. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-004": [
-		"Take responsibility and stay calm. Ask for input before deciding. Then follow through.",
-		"De-escalate the situation. Then follow through. Be transparent and share what you know.",
-		"And keep the tone respectful. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-005": [
-		"Do the fair thing even if it costs you. Ask for input before deciding. Then follow through.",
-		"Check on others first. Then follow through. Be transparent and share what you know.",
-		"Then do the right thing. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-006": [
-		"Keep everyone informed as you act. Ask for input before deciding. Then follow through.",
-		"Clarify the facts. Then follow through. Be transparent and share what you know.",
-		"And avoid making it worse. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-007": [
-		"Protect those who might be affected. Ask for input before deciding. Then follow through.",
-		"Offer assistance quietly. Then follow through. Be transparent and share what you know.",
-		"Then ask for backup. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-008": [
-		"Look for a solution that helps the group. Ask for input before deciding. Then follow through.",
-		"Take a measured next step. Then follow through. Be transparent and share what you know.",
-		"And reduce harm where you can. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-009": [
-		"Pause and think before you move. Ask for input before deciding. Then follow through.",
-		"Follow the safest process. Then follow through. Be transparent and share what you know.",
-		"Then report it properly. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-010": [
-		"Ask for guidance from a trusted person. Ask for input before deciding. Then follow through.",
-		"Choose honesty over speed. Then follow through. Be transparent and share what you know.",
-		"And give credit where due. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-011": [
-		"Prioritize care over convenience. Ask for input before deciding. Then follow through.",
-		"Keep the focus on safety. Then follow through. Be transparent and share what you know.",
-		"Then stay consistent. Be transparent and share what you know. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-012": [
-		"Be transparent and share what you know. Document what happened. Then follow through.",
-		"Ask for input before deciding. And keep people safe. Be transparent and share what you know.",
-		"Then follow through. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-013": [
-		"Choose the safest option for others. Document what happened. Then follow through.",
-		"Document what happened. And keep people safe. Be transparent and share what you know.",
-		"And keep people safe. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-014": [
-		"Act with empathy and patience. Document what happened. Then follow through.",
-		"Seek help from someone responsible. And keep people safe. Be transparent and share what you know.",
-		"Then own the outcome. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-015": [
-		"Take responsibility and stay calm. Document what happened. Then follow through.",
-		"De-escalate the situation. And keep people safe. Be transparent and share what you know.",
-		"And keep the tone respectful. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-016": [
-		"Do the fair thing even if it costs you. Document what happened. Then follow through.",
-		"Check on others first. And keep people safe. Be transparent and share what you know.",
-		"Then do the right thing. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-017": [
-		"Keep everyone informed as you act. Document what happened. Then follow through.",
-		"Clarify the facts. And keep people safe. Be transparent and share what you know.",
-		"And avoid making it worse. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-018": [
-		"Protect those who might be affected. Document what happened. Then follow through.",
-		"Offer assistance quietly. And keep people safe. Be transparent and share what you know.",
-		"Then ask for backup. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-019": [
-		"Look for a solution that helps the group. Document what happened. Then follow through.",
-		"Take a measured next step. And keep people safe. Be transparent and share what you know.",
-		"And reduce harm where you can. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-020": [
-		"Pause and think before you move. Document what happened. Then follow through.",
-		"Follow the safest process. And keep people safe. Be transparent and share what you know.",
-		"Then report it properly. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-021": [
-		"Ask for guidance from a trusted person. Document what happened. Then follow through.",
-		"Choose honesty over speed. And keep people safe. Be transparent and share what you know.",
-		"And give credit where due. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-022": [
-		"Prioritize care over convenience. Document what happened. Then follow through.",
-		"Keep the focus on safety. And keep people safe. Be transparent and share what you know.",
-		"Then stay consistent. Choose the safest option for others. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-023": [
-		"Be transparent and share what you know. Seek help from someone responsible. Then follow through.",
-		"Ask for input before deciding. Then own the outcome. Be transparent and share what you know.",
-		"Then follow through. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-024": [
-		"Choose the safest option for others. Seek help from someone responsible. Then follow through.",
-		"Document what happened. Then own the outcome. Be transparent and share what you know.",
-		"And keep people safe. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-025": [
-		"Act with empathy and patience. Seek help from someone responsible. Then follow through.",
-		"Seek help from someone responsible. Then own the outcome. Be transparent and share what you know.",
-		"Then own the outcome. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-026": [
-		"Take responsibility and stay calm. Seek help from someone responsible. Then follow through.",
-		"De-escalate the situation. Then own the outcome. Be transparent and share what you know.",
-		"And keep the tone respectful. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-027": [
-		"Do the fair thing even if it costs you. Seek help from someone responsible. Then follow through.",
-		"Check on others first. Then own the outcome. Be transparent and share what you know.",
-		"Then do the right thing. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-028": [
-		"Keep everyone informed as you act. Seek help from someone responsible. Then follow through.",
-		"Clarify the facts. Then own the outcome. Be transparent and share what you know.",
-		"And avoid making it worse. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-029": [
-		"Protect those who might be affected. Seek help from someone responsible. Then follow through.",
-		"Offer assistance quietly. Then own the outcome. Be transparent and share what you know.",
-		"Then ask for backup. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-030": [
-		"Look for a solution that helps the group. Seek help from someone responsible. Then follow through.",
-		"Take a measured next step. Then own the outcome. Be transparent and share what you know.",
-		"And reduce harm where you can. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-031": [
-		"Pause and think before you move. Seek help from someone responsible. Then follow through.",
-		"Follow the safest process. Then own the outcome. Be transparent and share what you know.",
-		"Then report it properly. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-032": [
-		"Ask for guidance from a trusted person. Seek help from someone responsible. Then follow through.",
-		"Choose honesty over speed. Then own the outcome. Be transparent and share what you know.",
-		"And give credit where due. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-033": [
-		"Prioritize care over convenience. Seek help from someone responsible. Then follow through.",
-		"Keep the focus on safety. Then own the outcome. Be transparent and share what you know.",
-		"Then stay consistent. Act with empathy and patience. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-034": [
-		"Be transparent and share what you know. De-escalate the situation. Then follow through.",
-		"Ask for input before deciding. And keep the tone respectful. Be transparent and share what you know.",
-		"Then follow through. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-035": [
-		"Choose the safest option for others. De-escalate the situation. Then follow through.",
-		"Document what happened. And keep the tone respectful. Be transparent and share what you know.",
-		"And keep people safe. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-036": [
-		"Act with empathy and patience. De-escalate the situation. Then follow through.",
-		"Seek help from someone responsible. And keep the tone respectful. Be transparent and share what you know.",
-		"Then own the outcome. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-037": [
-		"Take responsibility and stay calm. De-escalate the situation. Then follow through.",
-		"De-escalate the situation. And keep the tone respectful. Be transparent and share what you know.",
-		"And keep the tone respectful. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-038": [
-		"Do the fair thing even if it costs you. De-escalate the situation. Then follow through.",
-		"Check on others first. And keep the tone respectful. Be transparent and share what you know.",
-		"Then do the right thing. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-039": [
-		"Keep everyone informed as you act. De-escalate the situation. Then follow through.",
-		"Clarify the facts. And keep the tone respectful. Be transparent and share what you know.",
-		"And avoid making it worse. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-040": [
-		"Protect those who might be affected. De-escalate the situation. Then follow through.",
-		"Offer assistance quietly. And keep the tone respectful. Be transparent and share what you know.",
-		"Then ask for backup. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-041": [
-		"Look for a solution that helps the group. De-escalate the situation. Then follow through.",
-		"Take a measured next step. And keep the tone respectful. Be transparent and share what you know.",
-		"And reduce harm where you can. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-042": [
-		"Pause and think before you move. De-escalate the situation. Then follow through.",
-		"Follow the safest process. And keep the tone respectful. Be transparent and share what you know.",
-		"Then report it properly. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-043": [
-		"Ask for guidance from a trusted person. De-escalate the situation. Then follow through.",
-		"Choose honesty over speed. And keep the tone respectful. Be transparent and share what you know.",
-		"And give credit where due. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-044": [
-		"Prioritize care over convenience. De-escalate the situation. Then follow through.",
-		"Keep the focus on safety. And keep the tone respectful. Be transparent and share what you know.",
-		"Then stay consistent. Take responsibility and stay calm. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-045": [
-		"Be transparent and share what you know. Check on others first. Then follow through.",
-		"Ask for input before deciding. Then do the right thing. Be transparent and share what you know.",
-		"Then follow through. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-046": [
-		"Choose the safest option for others. Check on others first. Then follow through.",
-		"Document what happened. Then do the right thing. Be transparent and share what you know.",
-		"And keep people safe. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-047": [
-		"Act with empathy and patience. Check on others first. Then follow through.",
-		"Seek help from someone responsible. Then do the right thing. Be transparent and share what you know.",
-		"Then own the outcome. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-048": [
-		"Take responsibility and stay calm. Check on others first. Then follow through.",
-		"De-escalate the situation. Then do the right thing. Be transparent and share what you know.",
-		"And keep the tone respectful. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-049": [
-		"Do the fair thing even if it costs you. Check on others first. Then follow through.",
-		"Check on others first. Then do the right thing. Be transparent and share what you know.",
-		"Then do the right thing. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-050": [
-		"Keep everyone informed as you act. Check on others first. Then follow through.",
-		"Clarify the facts. Then do the right thing. Be transparent and share what you know.",
-		"And avoid making it worse. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-051": [
-		"Protect those who might be affected. Check on others first. Then follow through.",
-		"Offer assistance quietly. Then do the right thing. Be transparent and share what you know.",
-		"Then ask for backup. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-052": [
-		"Look for a solution that helps the group. Check on others first. Then follow through.",
-		"Take a measured next step. Then do the right thing. Be transparent and share what you know.",
-		"And reduce harm where you can. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-053": [
-		"Pause and think before you move. Check on others first. Then follow through.",
-		"Follow the safest process. Then do the right thing. Be transparent and share what you know.",
-		"Then report it properly. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-054": [
-		"Ask for guidance from a trusted person. Check on others first. Then follow through.",
-		"Choose honesty over speed. Then do the right thing. Be transparent and share what you know.",
-		"And give credit where due. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-055": [
-		"Prioritize care over convenience. Check on others first. Then follow through.",
-		"Keep the focus on safety. Then do the right thing. Be transparent and share what you know.",
-		"Then stay consistent. Do the fair thing even if it costs you. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-056": [
-		"Be transparent and share what you know. Clarify the facts. Then follow through.",
-		"Ask for input before deciding. And avoid making it worse. Be transparent and share what you know.",
-		"Then follow through. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-057": [
-		"Choose the safest option for others. Clarify the facts. Then follow through.",
-		"Document what happened. And avoid making it worse. Be transparent and share what you know.",
-		"And keep people safe. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-058": [
-		"Act with empathy and patience. Clarify the facts. Then follow through.",
-		"Seek help from someone responsible. And avoid making it worse. Be transparent and share what you know.",
-		"Then own the outcome. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-059": [
-		"Take responsibility and stay calm. Clarify the facts. Then follow through.",
-		"De-escalate the situation. And avoid making it worse. Be transparent and share what you know.",
-		"And keep the tone respectful. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-060": [
-		"Do the fair thing even if it costs you. Clarify the facts. Then follow through.",
-		"Check on others first. And avoid making it worse. Be transparent and share what you know.",
-		"Then do the right thing. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-061": [
-		"Keep everyone informed as you act. Clarify the facts. Then follow through.",
-		"Clarify the facts. And avoid making it worse. Be transparent and share what you know.",
-		"And avoid making it worse. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-062": [
-		"Protect those who might be affected. Clarify the facts. Then follow through.",
-		"Offer assistance quietly. And avoid making it worse. Be transparent and share what you know.",
-		"Then ask for backup. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-063": [
-		"Look for a solution that helps the group. Clarify the facts. Then follow through.",
-		"Take a measured next step. And avoid making it worse. Be transparent and share what you know.",
-		"And reduce harm where you can. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-064": [
-		"Pause and think before you move. Clarify the facts. Then follow through.",
-		"Follow the safest process. And avoid making it worse. Be transparent and share what you know.",
-		"Then report it properly. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-065": [
-		"Ask for guidance from a trusted person. Clarify the facts. Then follow through.",
-		"Choose honesty over speed. And avoid making it worse. Be transparent and share what you know.",
-		"And give credit where due. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-066": [
-		"Prioritize care over convenience. Clarify the facts. Then follow through.",
-		"Keep the focus on safety. And avoid making it worse. Be transparent and share what you know.",
-		"Then stay consistent. Keep everyone informed as you act. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-067": [
-		"Be transparent and share what you know. Offer assistance quietly. Then follow through.",
-		"Ask for input before deciding. Then ask for backup. Be transparent and share what you know.",
-		"Then follow through. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-068": [
-		"Choose the safest option for others. Offer assistance quietly. Then follow through.",
-		"Document what happened. Then ask for backup. Be transparent and share what you know.",
-		"And keep people safe. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-069": [
-		"Act with empathy and patience. Offer assistance quietly. Then follow through.",
-		"Seek help from someone responsible. Then ask for backup. Be transparent and share what you know.",
-		"Then own the outcome. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-070": [
-		"Take responsibility and stay calm. Offer assistance quietly. Then follow through.",
-		"De-escalate the situation. Then ask for backup. Be transparent and share what you know.",
-		"And keep the tone respectful. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-071": [
-		"Do the fair thing even if it costs you. Offer assistance quietly. Then follow through.",
-		"Check on others first. Then ask for backup. Be transparent and share what you know.",
-		"Then do the right thing. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-072": [
-		"Keep everyone informed as you act. Offer assistance quietly. Then follow through.",
-		"Clarify the facts. Then ask for backup. Be transparent and share what you know.",
-		"And avoid making it worse. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-073": [
-		"Protect those who might be affected. Offer assistance quietly. Then follow through.",
-		"Offer assistance quietly. Then ask for backup. Be transparent and share what you know.",
-		"Then ask for backup. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-074": [
-		"Look for a solution that helps the group. Offer assistance quietly. Then follow through.",
-		"Take a measured next step. Then ask for backup. Be transparent and share what you know.",
-		"And reduce harm where you can. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-075": [
-		"Pause and think before you move. Offer assistance quietly. Then follow through.",
-		"Follow the safest process. Then ask for backup. Be transparent and share what you know.",
-		"Then report it properly. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-076": [
-		"Ask for guidance from a trusted person. Offer assistance quietly. Then follow through.",
-		"Choose honesty over speed. Then ask for backup. Be transparent and share what you know.",
-		"And give credit where due. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-077": [
-		"Prioritize care over convenience. Offer assistance quietly. Then follow through.",
-		"Keep the focus on safety. Then ask for backup. Be transparent and share what you know.",
-		"Then stay consistent. Protect those who might be affected. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-078": [
-		"Be transparent and share what you know. Take a measured next step. Then follow through.",
-		"Ask for input before deciding. And reduce harm where you can. Be transparent and share what you know.",
-		"Then follow through. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-079": [
-		"Choose the safest option for others. Take a measured next step. Then follow through.",
-		"Document what happened. And reduce harm where you can. Be transparent and share what you know.",
-		"And keep people safe. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-080": [
-		"Act with empathy and patience. Take a measured next step. Then follow through.",
-		"Seek help from someone responsible. And reduce harm where you can. Be transparent and share what you know.",
-		"Then own the outcome. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-081": [
-		"Take responsibility and stay calm. Take a measured next step. Then follow through.",
-		"De-escalate the situation. And reduce harm where you can. Be transparent and share what you know.",
-		"And keep the tone respectful. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-082": [
-		"Do the fair thing even if it costs you. Take a measured next step. Then follow through.",
-		"Check on others first. And reduce harm where you can. Be transparent and share what you know.",
-		"Then do the right thing. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-083": [
-		"Keep everyone informed as you act. Take a measured next step. Then follow through.",
-		"Clarify the facts. And reduce harm where you can. Be transparent and share what you know.",
-		"And avoid making it worse. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-084": [
-		"Protect those who might be affected. Take a measured next step. Then follow through.",
-		"Offer assistance quietly. And reduce harm where you can. Be transparent and share what you know.",
-		"Then ask for backup. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-085": [
-		"Look for a solution that helps the group. Take a measured next step. Then follow through.",
-		"Take a measured next step. And reduce harm where you can. Be transparent and share what you know.",
-		"And reduce harm where you can. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-086": [
-		"Pause and think before you move. Take a measured next step. Then follow through.",
-		"Follow the safest process. And reduce harm where you can. Be transparent and share what you know.",
-		"Then report it properly. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-087": [
-		"Ask for guidance from a trusted person. Take a measured next step. Then follow through.",
-		"Choose honesty over speed. And reduce harm where you can. Be transparent and share what you know.",
-		"And give credit where due. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-088": [
-		"Prioritize care over convenience. Take a measured next step. Then follow through.",
-		"Keep the focus on safety. And reduce harm where you can. Be transparent and share what you know.",
-		"Then stay consistent. Look for a solution that helps the group. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-089": [
-		"Be transparent and share what you know. Follow the safest process. Then follow through.",
-		"Ask for input before deciding. Then report it properly. Be transparent and share what you know.",
-		"Then follow through. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-090": [
-		"Choose the safest option for others. Follow the safest process. Then follow through.",
-		"Document what happened. Then report it properly. Be transparent and share what you know.",
-		"And keep people safe. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-091": [
-		"Act with empathy and patience. Follow the safest process. Then follow through.",
-		"Seek help from someone responsible. Then report it properly. Be transparent and share what you know.",
-		"Then own the outcome. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-092": [
-		"Take responsibility and stay calm. Follow the safest process. Then follow through.",
-		"De-escalate the situation. Then report it properly. Be transparent and share what you know.",
-		"And keep the tone respectful. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-093": [
-		"Do the fair thing even if it costs you. Follow the safest process. Then follow through.",
-		"Check on others first. Then report it properly. Be transparent and share what you know.",
-		"Then do the right thing. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-094": [
-		"Keep everyone informed as you act. Follow the safest process. Then follow through.",
-		"Clarify the facts. Then report it properly. Be transparent and share what you know.",
-		"And avoid making it worse. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-095": [
-		"Protect those who might be affected. Follow the safest process. Then follow through.",
-		"Offer assistance quietly. Then report it properly. Be transparent and share what you know.",
-		"Then ask for backup. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-096": [
-		"Look for a solution that helps the group. Follow the safest process. Then follow through.",
-		"Take a measured next step. Then report it properly. Be transparent and share what you know.",
-		"And reduce harm where you can. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-097": [
-		"Pause and think before you move. Follow the safest process. Then follow through.",
-		"Follow the safest process. Then report it properly. Be transparent and share what you know.",
-		"Then report it properly. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-098": [
-		"Ask for guidance from a trusted person. Follow the safest process. Then follow through.",
-		"Choose honesty over speed. Then report it properly. Be transparent and share what you know.",
-		"And give credit where due. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-099": [
-		"Prioritize care over convenience. Follow the safest process. Then follow through.",
-		"Keep the focus on safety. Then report it properly. Be transparent and share what you know.",
-		"Then stay consistent. Pause and think before you move. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-100": [
-		"Be transparent and share what you know. Choose honesty over speed. Then follow through.",
-		"Ask for input before deciding. And give credit where due. Be transparent and share what you know.",
-		"Then follow through. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-101": [
-		"Choose the safest option for others. Choose honesty over speed. Then follow through.",
-		"Document what happened. And give credit where due. Be transparent and share what you know.",
-		"And keep people safe. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-102": [
-		"Act with empathy and patience. Choose honesty over speed. Then follow through.",
-		"Seek help from someone responsible. And give credit where due. Be transparent and share what you know.",
-		"Then own the outcome. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-103": [
-		"Take responsibility and stay calm. Choose honesty over speed. Then follow through.",
-		"De-escalate the situation. And give credit where due. Be transparent and share what you know.",
-		"And keep the tone respectful. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-104": [
-		"Do the fair thing even if it costs you. Choose honesty over speed. Then follow through.",
-		"Check on others first. And give credit where due. Be transparent and share what you know.",
-		"Then do the right thing. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-105": [
-		"Keep everyone informed as you act. Choose honesty over speed. Then follow through.",
-		"Clarify the facts. And give credit where due. Be transparent and share what you know.",
-		"And avoid making it worse. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-106": [
-		"Protect those who might be affected. Choose honesty over speed. Then follow through.",
-		"Offer assistance quietly. And give credit where due. Be transparent and share what you know.",
-		"Then ask for backup. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-107": [
-		"Look for a solution that helps the group. Choose honesty over speed. Then follow through.",
-		"Take a measured next step. And give credit where due. Be transparent and share what you know.",
-		"And reduce harm where you can. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-108": [
-		"Pause and think before you move. Choose honesty over speed. Then follow through.",
-		"Follow the safest process. And give credit where due. Be transparent and share what you know.",
-		"Then report it properly. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-109": [
-		"Ask for guidance from a trusted person. Choose honesty over speed. Then follow through.",
-		"Choose honesty over speed. And give credit where due. Be transparent and share what you know.",
-		"And give credit where due. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-110": [
-		"Prioritize care over convenience. Choose honesty over speed. Then follow through.",
-		"Keep the focus on safety. And give credit where due. Be transparent and share what you know.",
-		"Then stay consistent. Ask for guidance from a trusted person. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-111": [
-		"Be transparent and share what you know. Keep the focus on safety. Then follow through.",
-		"Ask for input before deciding. Then stay consistent. Be transparent and share what you know.",
-		"Then follow through. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-112": [
-		"Choose the safest option for others. Keep the focus on safety. Then follow through.",
-		"Document what happened. Then stay consistent. Be transparent and share what you know.",
-		"And keep people safe. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-113": [
-		"Act with empathy and patience. Keep the focus on safety. Then follow through.",
-		"Seek help from someone responsible. Then stay consistent. Be transparent and share what you know.",
-		"Then own the outcome. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 	"MS-114": [
-		"Take responsibility and stay calm. Keep the focus on safety. Then follow through.",
-		"De-escalate the situation. Then stay consistent. Be transparent and share what you know.",
-		"And keep the tone respectful. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Take responsibility and stay calm.",		"De-escalate the situation.",		"Keep the tone respectful.",	],
 	"MS-115": [
-		"Do the fair thing even if it costs you. Keep the focus on safety. Then follow through.",
-		"Check on others first. Then stay consistent. Be transparent and share what you know.",
-		"Then do the right thing. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Do the fair thing even if it costs you.",		"Check on others first.",		"Do the right thing.",	],
 	"MS-116": [
-		"Keep everyone informed as you act. Keep the focus on safety. Then follow through.",
-		"Clarify the facts. Then stay consistent. Be transparent and share what you know.",
-		"And avoid making it worse. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Keep everyone informed as you act.",		"Clarify the facts.",		"Avoid making it worse.",	],
 	"MS-117": [
-		"Protect those who might be affected. Keep the focus on safety. Then follow through.",
-		"Offer assistance quietly. Then stay consistent. Be transparent and share what you know.",
-		"Then ask for backup. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Protect those who might be affected.",		"Offer assistance quietly.",		"Ask for backup.",	],
 	"MS-118": [
-		"Look for a solution that helps the group. Keep the focus on safety. Then follow through.",
-		"Take a measured next step. Then stay consistent. Be transparent and share what you know.",
-		"And reduce harm where you can. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Look for a solution that helps the group.",		"Take a measured next step.",		"Reduce harm where you can.",	],
 	"MS-119": [
-		"Pause and think before you move. Keep the focus on safety. Then follow through.",
-		"Follow the safest process. Then stay consistent. Be transparent and share what you know.",
-		"Then report it properly. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Pause and think before you move.",		"Follow the safest process.",		"Report it properly.",	],
 	"MS-120": [
-		"Ask for guidance from a trusted person. Keep the focus on safety. Then follow through.",
-		"Choose honesty over speed. Then stay consistent. Be transparent and share what you know.",
-		"And give credit where due. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Ask for guidance from a trusted person.",		"Choose honesty over speed.",		"Give credit where due.",	],
 	"MS-121": [
-		"Prioritize care over convenience. Keep the focus on safety. Then follow through.",
-		"Keep the focus on safety. Then stay consistent. Be transparent and share what you know.",
-		"Then stay consistent. Prioritize care over convenience. Ask for input before deciding.",
-	],
+		"Prioritize care over convenience.",		"Keep the focus on safety.",		"Stay consistent.",	],
 	"MS-122": [
-		"Be transparent and share what you know. Ask for input before deciding. And keep people safe.",
-		"Ask for input before deciding. Then follow through. Choose the safest option for others.",
-		"Then follow through. Be transparent and share what you know. Document what happened.",
-	],
+		"Be transparent and share what you know.",		"Ask for input before deciding.",		"Follow through.",	],
 	"MS-123": [
-		"Choose the safest option for others. Ask for input before deciding. And keep people safe.",
-		"Document what happened. Then follow through. Choose the safest option for others.",
-		"And keep people safe. Be transparent and share what you know. Document what happened.",
-	],
+		"Choose the safest option for others.",		"Document what happened.",		"Keep people safe.",	],
 	"MS-124": [
-		"Act with empathy and patience. Ask for input before deciding. And keep people safe.",
-		"Seek help from someone responsible. Then follow through. Choose the safest option for others.",
-		"Then own the outcome. Be transparent and share what you know. Document what happened.",
-	],
+		"Act with empathy and patience.",		"Seek help from someone responsible.",		"Own the outcome.",	],
 }
 
 @export var devil_guidance_by_id: Dictionary = {
 	"MS-001": [
-		"Hide the problem and move on. Leave the mess for later. Then move on fast.",
-		"Leave the mess for later. Then move on fast. Hide the problem and move on.",
-		"Then move on fast. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-002": [
-		"Shift the blame to someone else. Leave the mess for later. Then move on fast.",
-		"Pressure others to take the fall. Then move on fast. Hide the problem and move on.",
-		"And act like nothing happened. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-003": [
-		"Exploit the situation for yourself. Leave the mess for later. Then move on fast.",
-		"Use it to get ahead. Then move on fast. Hide the problem and move on.",
-		"Then dodge any questions. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-004": [
-		"Take credit and deny the risk. Leave the mess for later. Then move on fast.",
-		"Ignore the consequences. Then move on fast. Hide the problem and move on.",
-		"And keep the credit. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-005": [
-		"Cut corners to save time. Leave the mess for later. Then move on fast.",
-		"Avoid accountability. Then move on fast. Hide the problem and move on.",
-		"Then disappear if it goes bad. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-006": [
-		"Let someone else deal with it. Leave the mess for later. Then move on fast.",
-		"Spread doubt to protect yourself. Then move on fast. Hide the problem and move on.",
-		"And deny involvement. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-007": [
-		"Twist the story to your advantage. Leave the mess for later. Then move on fast.",
-		"Take the quickest option. Then move on fast. Hide the problem and move on.",
-		"Then push the risk outward. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-008": [
-		"Walk away before anyone notices. Leave the mess for later. Then move on fast.",
-		"Shift responsibility immediately. Then move on fast. Hide the problem and move on.",
-		"And leave no trace. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-009": [
-		"Prioritize yourself over others. Leave the mess for later. Then move on fast.",
-		"Cover it up quietly. Then move on fast. Hide the problem and move on.",
-		"Then gaslight if challenged. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-010": [
-		"Make it someone else’s problem. Leave the mess for later. Then move on fast.",
-		"Blame a rival if needed. Then move on fast. Hide the problem and move on.",
-		"And take the reward anyway. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-011": [
-		"Play innocent if questioned. Leave the mess for later. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then move on fast. Hide the problem and move on.",
-		"Then shift again if needed. Hide the problem and move on. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-012": [
-		"Hide the problem and move on. Pressure others to take the fall. Then move on fast.",
-		"Leave the mess for later. And act like nothing happened. Hide the problem and move on.",
-		"Then move on fast. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-013": [
-		"Shift the blame to someone else. Pressure others to take the fall. Then move on fast.",
-		"Pressure others to take the fall. And act like nothing happened. Hide the problem and move on.",
-		"And act like nothing happened. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-014": [
-		"Exploit the situation for yourself. Pressure others to take the fall. Then move on fast.",
-		"Use it to get ahead. And act like nothing happened. Hide the problem and move on.",
-		"Then dodge any questions. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-015": [
-		"Take credit and deny the risk. Pressure others to take the fall. Then move on fast.",
-		"Ignore the consequences. And act like nothing happened. Hide the problem and move on.",
-		"And keep the credit. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-016": [
-		"Cut corners to save time. Pressure others to take the fall. Then move on fast.",
-		"Avoid accountability. And act like nothing happened. Hide the problem and move on.",
-		"Then disappear if it goes bad. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-017": [
-		"Let someone else deal with it. Pressure others to take the fall. Then move on fast.",
-		"Spread doubt to protect yourself. And act like nothing happened. Hide the problem and move on.",
-		"And deny involvement. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-018": [
-		"Twist the story to your advantage. Pressure others to take the fall. Then move on fast.",
-		"Take the quickest option. And act like nothing happened. Hide the problem and move on.",
-		"Then push the risk outward. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-019": [
-		"Walk away before anyone notices. Pressure others to take the fall. Then move on fast.",
-		"Shift responsibility immediately. And act like nothing happened. Hide the problem and move on.",
-		"And leave no trace. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-020": [
-		"Prioritize yourself over others. Pressure others to take the fall. Then move on fast.",
-		"Cover it up quietly. And act like nothing happened. Hide the problem and move on.",
-		"Then gaslight if challenged. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-021": [
-		"Make it someone else’s problem. Pressure others to take the fall. Then move on fast.",
-		"Blame a rival if needed. And act like nothing happened. Hide the problem and move on.",
-		"And take the reward anyway. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-022": [
-		"Play innocent if questioned. Pressure others to take the fall. Then move on fast.",
-		"Keep the benefit and ditch the cost. And act like nothing happened. Hide the problem and move on.",
-		"Then shift again if needed. Shift the blame to someone else. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-023": [
-		"Hide the problem and move on. Use it to get ahead. Then move on fast.",
-		"Leave the mess for later. Then dodge any questions. Hide the problem and move on.",
-		"Then move on fast. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-024": [
-		"Shift the blame to someone else. Use it to get ahead. Then move on fast.",
-		"Pressure others to take the fall. Then dodge any questions. Hide the problem and move on.",
-		"And act like nothing happened. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-025": [
-		"Exploit the situation for yourself. Use it to get ahead. Then move on fast.",
-		"Use it to get ahead. Then dodge any questions. Hide the problem and move on.",
-		"Then dodge any questions. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-026": [
-		"Take credit and deny the risk. Use it to get ahead. Then move on fast.",
-		"Ignore the consequences. Then dodge any questions. Hide the problem and move on.",
-		"And keep the credit. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-027": [
-		"Cut corners to save time. Use it to get ahead. Then move on fast.",
-		"Avoid accountability. Then dodge any questions. Hide the problem and move on.",
-		"Then disappear if it goes bad. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-028": [
-		"Let someone else deal with it. Use it to get ahead. Then move on fast.",
-		"Spread doubt to protect yourself. Then dodge any questions. Hide the problem and move on.",
-		"And deny involvement. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-029": [
-		"Twist the story to your advantage. Use it to get ahead. Then move on fast.",
-		"Take the quickest option. Then dodge any questions. Hide the problem and move on.",
-		"Then push the risk outward. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-030": [
-		"Walk away before anyone notices. Use it to get ahead. Then move on fast.",
-		"Shift responsibility immediately. Then dodge any questions. Hide the problem and move on.",
-		"And leave no trace. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-031": [
-		"Prioritize yourself over others. Use it to get ahead. Then move on fast.",
-		"Cover it up quietly. Then dodge any questions. Hide the problem and move on.",
-		"Then gaslight if challenged. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-032": [
-		"Make it someone else’s problem. Use it to get ahead. Then move on fast.",
-		"Blame a rival if needed. Then dodge any questions. Hide the problem and move on.",
-		"And take the reward anyway. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-033": [
-		"Play innocent if questioned. Use it to get ahead. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then dodge any questions. Hide the problem and move on.",
-		"Then shift again if needed. Exploit the situation for yourself. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-034": [
-		"Hide the problem and move on. Ignore the consequences. Then move on fast.",
-		"Leave the mess for later. And keep the credit. Hide the problem and move on.",
-		"Then move on fast. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-035": [
-		"Shift the blame to someone else. Ignore the consequences. Then move on fast.",
-		"Pressure others to take the fall. And keep the credit. Hide the problem and move on.",
-		"And act like nothing happened. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-036": [
-		"Exploit the situation for yourself. Ignore the consequences. Then move on fast.",
-		"Use it to get ahead. And keep the credit. Hide the problem and move on.",
-		"Then dodge any questions. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-037": [
-		"Take credit and deny the risk. Ignore the consequences. Then move on fast.",
-		"Ignore the consequences. And keep the credit. Hide the problem and move on.",
-		"And keep the credit. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-038": [
-		"Cut corners to save time. Ignore the consequences. Then move on fast.",
-		"Avoid accountability. And keep the credit. Hide the problem and move on.",
-		"Then disappear if it goes bad. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-039": [
-		"Let someone else deal with it. Ignore the consequences. Then move on fast.",
-		"Spread doubt to protect yourself. And keep the credit. Hide the problem and move on.",
-		"And deny involvement. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-040": [
-		"Twist the story to your advantage. Ignore the consequences. Then move on fast.",
-		"Take the quickest option. And keep the credit. Hide the problem and move on.",
-		"Then push the risk outward. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-041": [
-		"Walk away before anyone notices. Ignore the consequences. Then move on fast.",
-		"Shift responsibility immediately. And keep the credit. Hide the problem and move on.",
-		"And leave no trace. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-042": [
-		"Prioritize yourself over others. Ignore the consequences. Then move on fast.",
-		"Cover it up quietly. And keep the credit. Hide the problem and move on.",
-		"Then gaslight if challenged. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-043": [
-		"Make it someone else’s problem. Ignore the consequences. Then move on fast.",
-		"Blame a rival if needed. And keep the credit. Hide the problem and move on.",
-		"And take the reward anyway. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-044": [
-		"Play innocent if questioned. Ignore the consequences. Then move on fast.",
-		"Keep the benefit and ditch the cost. And keep the credit. Hide the problem and move on.",
-		"Then shift again if needed. Take credit and deny the risk. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-045": [
-		"Hide the problem and move on. Avoid accountability. Then move on fast.",
-		"Leave the mess for later. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then move on fast. Cut corners to save time. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-046": [
-		"Shift the blame to someone else. Avoid accountability. Then move on fast.",
-		"Pressure others to take the fall. Then disappear if it goes bad. Hide the problem and move on.",
-		"And act like nothing happened. Cut corners to save time. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-047": [
-		"Exploit the situation for yourself. Avoid accountability. Then move on fast.",
-		"Use it to get ahead. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then dodge any questions. Cut corners to save time. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-048": [
-		"Take credit and deny the risk. Avoid accountability. Then move on fast.",
-		"Ignore the consequences. Then disappear if it goes bad. Hide the problem and move on.",
-		"And keep the credit. Cut corners to save time. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-049": [
-		"Cut corners to save time. Avoid accountability. Then move on fast.",
-		"Avoid accountability. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then disappear if it goes bad. Cut corners to save time. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-050": [
-		"Let someone else deal with it. Avoid accountability. Then move on fast.",
-		"Spread doubt to protect yourself. Then disappear if it goes bad. Hide the problem and move on.",
-		"And deny involvement. Cut corners to save time. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-051": [
-		"Twist the story to your advantage. Avoid accountability. Then move on fast.",
-		"Take the quickest option. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then push the risk outward. Cut corners to save time. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-052": [
-		"Walk away before anyone notices. Avoid accountability. Then move on fast.",
-		"Shift responsibility immediately. Then disappear if it goes bad. Hide the problem and move on.",
-		"And leave no trace. Cut corners to save time. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-053": [
-		"Prioritize yourself over others. Avoid accountability. Then move on fast.",
-		"Cover it up quietly. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then gaslight if challenged. Cut corners to save time. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-054": [
-		"Make it someone else’s problem. Avoid accountability. Then move on fast.",
-		"Blame a rival if needed. Then disappear if it goes bad. Hide the problem and move on.",
-		"And take the reward anyway. Cut corners to save time. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-055": [
-		"Play innocent if questioned. Avoid accountability. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then disappear if it goes bad. Hide the problem and move on.",
-		"Then shift again if needed. Cut corners to save time. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-056": [
-		"Hide the problem and move on. Spread doubt to protect yourself. Then move on fast.",
-		"Leave the mess for later. And deny involvement. Hide the problem and move on.",
-		"Then move on fast. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-057": [
-		"Shift the blame to someone else. Spread doubt to protect yourself. Then move on fast.",
-		"Pressure others to take the fall. And deny involvement. Hide the problem and move on.",
-		"And act like nothing happened. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-058": [
-		"Exploit the situation for yourself. Spread doubt to protect yourself. Then move on fast.",
-		"Use it to get ahead. And deny involvement. Hide the problem and move on.",
-		"Then dodge any questions. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-059": [
-		"Take credit and deny the risk. Spread doubt to protect yourself. Then move on fast.",
-		"Ignore the consequences. And deny involvement. Hide the problem and move on.",
-		"And keep the credit. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-060": [
-		"Cut corners to save time. Spread doubt to protect yourself. Then move on fast.",
-		"Avoid accountability. And deny involvement. Hide the problem and move on.",
-		"Then disappear if it goes bad. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-061": [
-		"Let someone else deal with it. Spread doubt to protect yourself. Then move on fast.",
-		"Spread doubt to protect yourself. And deny involvement. Hide the problem and move on.",
-		"And deny involvement. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-062": [
-		"Twist the story to your advantage. Spread doubt to protect yourself. Then move on fast.",
-		"Take the quickest option. And deny involvement. Hide the problem and move on.",
-		"Then push the risk outward. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-063": [
-		"Walk away before anyone notices. Spread doubt to protect yourself. Then move on fast.",
-		"Shift responsibility immediately. And deny involvement. Hide the problem and move on.",
-		"And leave no trace. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-064": [
-		"Prioritize yourself over others. Spread doubt to protect yourself. Then move on fast.",
-		"Cover it up quietly. And deny involvement. Hide the problem and move on.",
-		"Then gaslight if challenged. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-065": [
-		"Make it someone else’s problem. Spread doubt to protect yourself. Then move on fast.",
-		"Blame a rival if needed. And deny involvement. Hide the problem and move on.",
-		"And take the reward anyway. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-066": [
-		"Play innocent if questioned. Spread doubt to protect yourself. Then move on fast.",
-		"Keep the benefit and ditch the cost. And deny involvement. Hide the problem and move on.",
-		"Then shift again if needed. Let someone else deal with it. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-067": [
-		"Hide the problem and move on. Take the quickest option. Then move on fast.",
-		"Leave the mess for later. Then push the risk outward. Hide the problem and move on.",
-		"Then move on fast. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-068": [
-		"Shift the blame to someone else. Take the quickest option. Then move on fast.",
-		"Pressure others to take the fall. Then push the risk outward. Hide the problem and move on.",
-		"And act like nothing happened. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-069": [
-		"Exploit the situation for yourself. Take the quickest option. Then move on fast.",
-		"Use it to get ahead. Then push the risk outward. Hide the problem and move on.",
-		"Then dodge any questions. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-070": [
-		"Take credit and deny the risk. Take the quickest option. Then move on fast.",
-		"Ignore the consequences. Then push the risk outward. Hide the problem and move on.",
-		"And keep the credit. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-071": [
-		"Cut corners to save time. Take the quickest option. Then move on fast.",
-		"Avoid accountability. Then push the risk outward. Hide the problem and move on.",
-		"Then disappear if it goes bad. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-072": [
-		"Let someone else deal with it. Take the quickest option. Then move on fast.",
-		"Spread doubt to protect yourself. Then push the risk outward. Hide the problem and move on.",
-		"And deny involvement. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-073": [
-		"Twist the story to your advantage. Take the quickest option. Then move on fast.",
-		"Take the quickest option. Then push the risk outward. Hide the problem and move on.",
-		"Then push the risk outward. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-074": [
-		"Walk away before anyone notices. Take the quickest option. Then move on fast.",
-		"Shift responsibility immediately. Then push the risk outward. Hide the problem and move on.",
-		"And leave no trace. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-075": [
-		"Prioritize yourself over others. Take the quickest option. Then move on fast.",
-		"Cover it up quietly. Then push the risk outward. Hide the problem and move on.",
-		"Then gaslight if challenged. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-076": [
-		"Make it someone else’s problem. Take the quickest option. Then move on fast.",
-		"Blame a rival if needed. Then push the risk outward. Hide the problem and move on.",
-		"And take the reward anyway. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-077": [
-		"Play innocent if questioned. Take the quickest option. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then push the risk outward. Hide the problem and move on.",
-		"Then shift again if needed. Twist the story to your advantage. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-078": [
-		"Hide the problem and move on. Shift responsibility immediately. Then move on fast.",
-		"Leave the mess for later. And leave no trace. Hide the problem and move on.",
-		"Then move on fast. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-079": [
-		"Shift the blame to someone else. Shift responsibility immediately. Then move on fast.",
-		"Pressure others to take the fall. And leave no trace. Hide the problem and move on.",
-		"And act like nothing happened. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-080": [
-		"Exploit the situation for yourself. Shift responsibility immediately. Then move on fast.",
-		"Use it to get ahead. And leave no trace. Hide the problem and move on.",
-		"Then dodge any questions. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-081": [
-		"Take credit and deny the risk. Shift responsibility immediately. Then move on fast.",
-		"Ignore the consequences. And leave no trace. Hide the problem and move on.",
-		"And keep the credit. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-082": [
-		"Cut corners to save time. Shift responsibility immediately. Then move on fast.",
-		"Avoid accountability. And leave no trace. Hide the problem and move on.",
-		"Then disappear if it goes bad. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-083": [
-		"Let someone else deal with it. Shift responsibility immediately. Then move on fast.",
-		"Spread doubt to protect yourself. And leave no trace. Hide the problem and move on.",
-		"And deny involvement. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-084": [
-		"Twist the story to your advantage. Shift responsibility immediately. Then move on fast.",
-		"Take the quickest option. And leave no trace. Hide the problem and move on.",
-		"Then push the risk outward. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-085": [
-		"Walk away before anyone notices. Shift responsibility immediately. Then move on fast.",
-		"Shift responsibility immediately. And leave no trace. Hide the problem and move on.",
-		"And leave no trace. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-086": [
-		"Prioritize yourself over others. Shift responsibility immediately. Then move on fast.",
-		"Cover it up quietly. And leave no trace. Hide the problem and move on.",
-		"Then gaslight if challenged. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-087": [
-		"Make it someone else’s problem. Shift responsibility immediately. Then move on fast.",
-		"Blame a rival if needed. And leave no trace. Hide the problem and move on.",
-		"And take the reward anyway. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-088": [
-		"Play innocent if questioned. Shift responsibility immediately. Then move on fast.",
-		"Keep the benefit and ditch the cost. And leave no trace. Hide the problem and move on.",
-		"Then shift again if needed. Walk away before anyone notices. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-089": [
-		"Hide the problem and move on. Cover it up quietly. Then move on fast.",
-		"Leave the mess for later. Then gaslight if challenged. Hide the problem and move on.",
-		"Then move on fast. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-090": [
-		"Shift the blame to someone else. Cover it up quietly. Then move on fast.",
-		"Pressure others to take the fall. Then gaslight if challenged. Hide the problem and move on.",
-		"And act like nothing happened. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-091": [
-		"Exploit the situation for yourself. Cover it up quietly. Then move on fast.",
-		"Use it to get ahead. Then gaslight if challenged. Hide the problem and move on.",
-		"Then dodge any questions. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-092": [
-		"Take credit and deny the risk. Cover it up quietly. Then move on fast.",
-		"Ignore the consequences. Then gaslight if challenged. Hide the problem and move on.",
-		"And keep the credit. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-093": [
-		"Cut corners to save time. Cover it up quietly. Then move on fast.",
-		"Avoid accountability. Then gaslight if challenged. Hide the problem and move on.",
-		"Then disappear if it goes bad. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-094": [
-		"Let someone else deal with it. Cover it up quietly. Then move on fast.",
-		"Spread doubt to protect yourself. Then gaslight if challenged. Hide the problem and move on.",
-		"And deny involvement. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-095": [
-		"Twist the story to your advantage. Cover it up quietly. Then move on fast.",
-		"Take the quickest option. Then gaslight if challenged. Hide the problem and move on.",
-		"Then push the risk outward. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-096": [
-		"Walk away before anyone notices. Cover it up quietly. Then move on fast.",
-		"Shift responsibility immediately. Then gaslight if challenged. Hide the problem and move on.",
-		"And leave no trace. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-097": [
-		"Prioritize yourself over others. Cover it up quietly. Then move on fast.",
-		"Cover it up quietly. Then gaslight if challenged. Hide the problem and move on.",
-		"Then gaslight if challenged. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-098": [
-		"Make it someone else’s problem. Cover it up quietly. Then move on fast.",
-		"Blame a rival if needed. Then gaslight if challenged. Hide the problem and move on.",
-		"And take the reward anyway. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-099": [
-		"Play innocent if questioned. Cover it up quietly. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then gaslight if challenged. Hide the problem and move on.",
-		"Then shift again if needed. Prioritize yourself over others. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-100": [
-		"Hide the problem and move on. Blame a rival if needed. Then move on fast.",
-		"Leave the mess for later. And take the reward anyway. Hide the problem and move on.",
-		"Then move on fast. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-101": [
-		"Shift the blame to someone else. Blame a rival if needed. Then move on fast.",
-		"Pressure others to take the fall. And take the reward anyway. Hide the problem and move on.",
-		"And act like nothing happened. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-102": [
-		"Exploit the situation for yourself. Blame a rival if needed. Then move on fast.",
-		"Use it to get ahead. And take the reward anyway. Hide the problem and move on.",
-		"Then dodge any questions. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-103": [
-		"Take credit and deny the risk. Blame a rival if needed. Then move on fast.",
-		"Ignore the consequences. And take the reward anyway. Hide the problem and move on.",
-		"And keep the credit. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-104": [
-		"Cut corners to save time. Blame a rival if needed. Then move on fast.",
-		"Avoid accountability. And take the reward anyway. Hide the problem and move on.",
-		"Then disappear if it goes bad. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-105": [
-		"Let someone else deal with it. Blame a rival if needed. Then move on fast.",
-		"Spread doubt to protect yourself. And take the reward anyway. Hide the problem and move on.",
-		"And deny involvement. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-106": [
-		"Twist the story to your advantage. Blame a rival if needed. Then move on fast.",
-		"Take the quickest option. And take the reward anyway. Hide the problem and move on.",
-		"Then push the risk outward. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-107": [
-		"Walk away before anyone notices. Blame a rival if needed. Then move on fast.",
-		"Shift responsibility immediately. And take the reward anyway. Hide the problem and move on.",
-		"And leave no trace. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-108": [
-		"Prioritize yourself over others. Blame a rival if needed. Then move on fast.",
-		"Cover it up quietly. And take the reward anyway. Hide the problem and move on.",
-		"Then gaslight if challenged. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-109": [
-		"Make it someone else’s problem. Blame a rival if needed. Then move on fast.",
-		"Blame a rival if needed. And take the reward anyway. Hide the problem and move on.",
-		"And take the reward anyway. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-110": [
-		"Play innocent if questioned. Blame a rival if needed. Then move on fast.",
-		"Keep the benefit and ditch the cost. And take the reward anyway. Hide the problem and move on.",
-		"Then shift again if needed. Make it someone else’s problem. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-111": [
-		"Hide the problem and move on. Keep the benefit and ditch the cost. Then move on fast.",
-		"Leave the mess for later. Then shift again if needed. Hide the problem and move on.",
-		"Then move on fast. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-112": [
-		"Shift the blame to someone else. Keep the benefit and ditch the cost. Then move on fast.",
-		"Pressure others to take the fall. Then shift again if needed. Hide the problem and move on.",
-		"And act like nothing happened. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-113": [
-		"Exploit the situation for yourself. Keep the benefit and ditch the cost. Then move on fast.",
-		"Use it to get ahead. Then shift again if needed. Hide the problem and move on.",
-		"Then dodge any questions. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
 	"MS-114": [
-		"Take credit and deny the risk. Keep the benefit and ditch the cost. Then move on fast.",
-		"Ignore the consequences. Then shift again if needed. Hide the problem and move on.",
-		"And keep the credit. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Take credit and deny the risk.",		"Ignore the consequences.",		"Keep the credit.",	],
 	"MS-115": [
-		"Cut corners to save time. Keep the benefit and ditch the cost. Then move on fast.",
-		"Avoid accountability. Then shift again if needed. Hide the problem and move on.",
-		"Then disappear if it goes bad. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Cut corners to save time.",		"Avoid accountability.",		"Disappear if it goes bad.",	],
 	"MS-116": [
-		"Let someone else deal with it. Keep the benefit and ditch the cost. Then move on fast.",
-		"Spread doubt to protect yourself. Then shift again if needed. Hide the problem and move on.",
-		"And deny involvement. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Let someone else deal with it.",		"Spread doubt to protect yourself.",		"Deny involvement.",	],
 	"MS-117": [
-		"Twist the story to your advantage. Keep the benefit and ditch the cost. Then move on fast.",
-		"Take the quickest option. Then shift again if needed. Hide the problem and move on.",
-		"Then push the risk outward. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Twist the story to your advantage.",		"Take the quickest option.",		"Push the risk outward.",	],
 	"MS-118": [
-		"Walk away before anyone notices. Keep the benefit and ditch the cost. Then move on fast.",
-		"Shift responsibility immediately. Then shift again if needed. Hide the problem and move on.",
-		"And leave no trace. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Walk away before anyone notices.",		"Shift responsibility immediately.",		"Leave no trace.",	],
 	"MS-119": [
-		"Prioritize yourself over others. Keep the benefit and ditch the cost. Then move on fast.",
-		"Cover it up quietly. Then shift again if needed. Hide the problem and move on.",
-		"Then gaslight if challenged. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Prioritize yourself over others.",		"Cover it up quietly.",		"Gaslight if challenged.",	],
 	"MS-120": [
-		"Make it someone else’s problem. Keep the benefit and ditch the cost. Then move on fast.",
-		"Blame a rival if needed. Then shift again if needed. Hide the problem and move on.",
-		"And take the reward anyway. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Make it someone else’s problem.",		"Blame a rival if needed.",		"Take the reward anyway.",	],
 	"MS-121": [
-		"Play innocent if questioned. Keep the benefit and ditch the cost. Then move on fast.",
-		"Keep the benefit and ditch the cost. Then shift again if needed. Hide the problem and move on.",
-		"Then shift again if needed. Play innocent if questioned. Leave the mess for later.",
-	],
+		"Play innocent if questioned.",		"Keep the benefit and ditch the cost.",		"Shift again if needed.",	],
 	"MS-122": [
-		"Hide the problem and move on. Leave the mess for later. And act like nothing happened.",
-		"Leave the mess for later. Then move on fast. Shift the blame to someone else.",
-		"Then move on fast. Hide the problem and move on. Pressure others to take the fall.",
-	],
+		"Hide the problem and move on.",		"Leave the mess for later.",		"Move on fast.",	],
 	"MS-123": [
-		"Shift the blame to someone else. Leave the mess for later. And act like nothing happened.",
-		"Pressure others to take the fall. Then move on fast. Shift the blame to someone else.",
-		"And act like nothing happened. Hide the problem and move on. Pressure others to take the fall.",
-	],
+		"Shift the blame to someone else.",		"Pressure others to take the fall.",		"Act like nothing happened.",	],
 	"MS-124": [
-		"Exploit the situation for yourself. Leave the mess for later. And act like nothing happened.",
-		"Use it to get ahead. Then move on fast. Shift the blame to someone else.",
-		"Then dodge any questions. Hide the problem and move on. Pressure others to take the fall.",
+		"Exploit the situation for yourself.",		"Use it to get ahead.",		"Dodge any questions.",	],
+}
+
+var _outcome_messages_by_id: Dictionary = {}
+const OUTCOME_TEMPLATES := {
+	"Great": [
+		"{name} handled it brilliantly, and {effect}.",
+		"{name} came out of it stronger, and {effect}.",
+		"{name} made a great call, and {effect}.",
+	],
+	"Good": [
+		"{name} made a steady choice, and {effect}.",
+		"{name} found their footing, and {effect}.",
+		"{name} kept things on track, and {effect}.",
+	],
+	"Bad": [
+		"{name} hit a snag, and {effect}.",
+		"{name}'s choice didn’t land, and {effect}.",
+		"{name} stumbled a little, and {effect}.",
+	],
+	"Terrible": [
+		"{name}'s decision went badly, and {effect}.",
+		"{name} got hit hard by the outcome, and {effect}.",
+		"{name} had a rough turn, and {effect}.",
 	],
 }
+
+func get_outcome_message(
+	milestone_id: String,
+	result: String,
+	subject: SubjectResource,
+	stat_name: String,
+	adjustment: int
+) -> String:
+	if subject == null:
+		return ""
+	if _outcome_messages_by_id.is_empty():
+		_build_outcome_messages_by_id()
+	var by_result: Dictionary = _outcome_messages_by_id.get(milestone_id, {}) as Dictionary
+	if by_result.is_empty():
+		return ""
+	var options: Array = by_result.get(result, []) as Array
+	if options.is_empty():
+		return ""
+	var template: String = String(options.pick_random())
+	var effect: String = _stat_effect_phrase(stat_name, result)
+	return template.format({
+		"name": subject.name,
+		"effect": effect
+	})
+
+func _build_outcome_messages_by_id() -> void:
+	var ids: Array = _collect_all_milestone_ids()
+	for milestone_id in ids:
+		_outcome_messages_by_id[String(milestone_id)] = _build_outcome_message_set()
+
+func _collect_all_milestone_ids() -> Array:
+	var ids: Array = []
+	_collect_ids_from_pool(job_milestones_pool, ids)
+	_collect_ids_from_pool(activity_milestones_pool, ids)
+	return ids
+
+func _collect_ids_from_pool(pool: Dictionary, ids: Array) -> void:
+	for key in pool.keys():
+		var entries: Array = pool.get(key, []) as Array
+		for entry in entries:
+			if typeof(entry) != TYPE_DICTIONARY:
+				continue
+			var milestone_id: String = String((entry as Dictionary).get("id", ""))
+			if milestone_id != "" and not ids.has(milestone_id):
+				ids.append(milestone_id)
+
+func _build_outcome_message_set() -> Dictionary:
+	return {
+		"Great": (OUTCOME_TEMPLATES["Great"] as Array).duplicate(),
+		"Good": (OUTCOME_TEMPLATES["Good"] as Array).duplicate(),
+		"Bad": (OUTCOME_TEMPLATES["Bad"] as Array).duplicate(),
+		"Terrible": (OUTCOME_TEMPLATES["Terrible"] as Array).duplicate(),
+	}
+
+func _stat_effect_phrase(stat_name: String, result: String) -> String:
+	var positive := result == "Great" or result == "Good"
+	match stat_name:
+		"Intellect":
+			return "they feel sharper" if positive else "they feel foggier"
+		"Aesthetic":
+			return "they feel more expressive" if positive else "they feel creatively blocked"
+		"Health":
+			return "they feel healthier" if positive else "they feel drained"
+		"Volatility":
+			return "they feel calmer" if positive else "they feel more on edge"
+		"Affect":
+			return "they feel more upbeat" if positive else "they feel low"
+		"Nature":
+			return "they feel more open to others" if positive else "they feel more withdrawn"
+	return "they feel changed by it" if positive else "it left them shaken"

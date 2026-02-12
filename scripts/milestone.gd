@@ -2,6 +2,8 @@ extends Control
 
 const MILESTONE_DELAY := 1.0
 const MILESTONE_CONTENT = preload("res://scripts/resources/MilestonePools.tres")
+const ACTIVITY_TARGET = preload("res://scripts/resources/LeisureActivitiesPools.gd")
+const JOB_TARGET = preload("res://scripts/resources/SubjectJobsPool.tres")
 
 @onready var m_content = $Milestone_Guidance/Milestone/Frame/Milestone/Content
 @onready var guidance_slot_1 = $Milestone_Guidance/Guidance/GuidanceChoices/GuidanceChoice
@@ -16,17 +18,28 @@ var _current_milestone_id := ""
 
 func _ready() -> void:
 	_connect_guidance_buttons()
-	display_milestone_content()
 	visible = false
 	
 
-func trigger(activity_type := "") -> void:
+func trigger(activity_type: String) -> void:
 	if _pending:
 		return
 	_pending = true
 	_activity_type = activity_type
 	await get_tree().create_timer(MILESTONE_DELAY).timeout
 	display_milestone_content(_activity_type)
+	_post_milestone_feed_message()
+	visible = true
+	_play_milestone_sound()
+	_pending = false
+
+func trigger_job() -> void:
+	if _pending:
+		return
+	_pending = true
+	await get_tree().create_timer(MILESTONE_DELAY).timeout
+	display_job_milestone_content()
+	_post_milestone_feed_message()
 	visible = true
 	_play_milestone_sound()
 	_pending = false
@@ -37,7 +50,7 @@ func _play_milestone_sound() -> void:
 		sound.play_milestone()	
 
 
-func display_milestone_content(activity_type := "") -> void:
+func display_milestone_content(activity_type: String) -> void:
 	if m_content == null:
 		return
 	var generator := get_node_or_null("/root/SubjectGenerator")
@@ -48,11 +61,25 @@ func display_milestone_content(activity_type := "") -> void:
 		m_content.text = ""
 		_set_guidance_slots([])
 		return
-	var payload: Dictionary
-	if activity_type != "":
-		payload = MILESTONE_CONTENT.get_activity_milestone_with_id(activity_type, subject)
-	else:
-		payload = MILESTONE_CONTENT.get_job_milestone_with_id(subject)
+	_set_random_stat_target(activity_type)
+	var payload := MILESTONE_CONTENT.get_activity_milestone_with_id(activity_type, subject)
+	m_content.text = String(payload.get("text", ""))
+	_current_milestone_id = String(payload.get("id", ""))
+	_populate_guidance(_current_milestone_id)
+
+func display_job_milestone_content() -> void:
+	if m_content == null:
+		return
+	var generator := get_node_or_null("/root/SubjectGenerator")
+	var subject: SubjectResource = null
+	if generator and generator.has_method("get_subject"):
+		subject = generator.get_subject()
+	if subject == null:
+		m_content.text = ""
+		_set_guidance_slots([])
+		return
+	_set_random_job_stat_target()
+	var payload := MILESTONE_CONTENT.get_job_milestone_with_id(subject)
 	m_content.text = String(payload.get("text", ""))
 	_current_milestone_id = String(payload.get("id", ""))
 	_populate_guidance(_current_milestone_id)
@@ -74,15 +101,25 @@ func _on_guidance_pressed(button: Button) -> void:
 	var guidance_text := String(button.text).strip_edges()
 	if guidance_text == "":
 		return
-	var feed := _get_feed()
-	if feed and feed.has_method("post_guidance_message"):
-		feed.post_guidance_message("You suggested %s" % guidance_text, 0.5)
-		var other_dept := _get_other_department()
-		var other_guidance := _get_guidance_for_department(_current_milestone_id, other_dept)
-		if not other_guidance.is_empty():
-			var other_text := String(other_guidance.pick_random()).strip_edges()
-			if other_text != "":
-				feed.post_guidance_message("%s suggested %s" % [other_dept, other_text], 1.5)
+	var subject := _get_current_subject()
+	if subject == null:
+		return
+	var player_dept := _get_department().capitalize()
+	var other_dept := _get_other_department()
+	var other_text := ""
+	var other_guidance := _get_guidance_for_department(_current_milestone_id, other_dept)
+	if not other_guidance.is_empty():
+		other_text = String(other_guidance.pick_random()).strip_edges()
+	var manager := get_node_or_null("/root/Gamemanager")
+	if manager and manager.has_method("handle_guidance_choice"):
+		manager.handle_guidance_choice(
+			subject,
+			player_dept,
+			guidance_text,
+			other_dept,
+			other_text,
+			_current_milestone_id
+		)
 	visible = false
 	queue_free()
 
@@ -134,3 +171,66 @@ func _get_feed() -> Node:
 	if main and main.has_node("MainContent/Feed"):
 		return main.get_node("MainContent/Feed")
 	return null
+
+func _post_milestone_feed_message() -> void:
+	var generator := get_node_or_null("/root/SubjectGenerator")
+	if generator == null or not generator.has_method("get_subject"):
+		return
+	var subject: SubjectResource = generator.get_subject()
+	if subject == null:
+		return
+	var milestone_text := ""
+	if m_content:
+		milestone_text = String(m_content.text).strip_edges()
+	if milestone_text == "":
+		return
+	var feed := _get_feed()
+	if feed and feed.has_method("post_guidance_message"):
+		feed.post_guidance_message("%s triggered a milestone moment: %s" % [String(subject.name), milestone_text], 0.0)
+
+func _set_random_stat_target(activity_type: String) -> void:
+	var generator := get_node_or_null("/root/SubjectGenerator")
+	var subject: SubjectResource = null
+	if generator and generator.has_method("get_subject"):
+		subject = generator.get_subject()
+	if subject == null:
+		return
+	var activity_data: LeisureActivitiesPools = ACTIVITY_TARGET.new()
+	var activity_stats: Array = activity_data.activity_stats.get(activity_type, [])
+	if activity_stats.is_empty():
+		return
+	var target_stat := String(activity_stats.pick_random())
+	if target_stat == "":
+		return
+	var hard_stats := ["Intellect", "Aesthetic", "Health"]
+	var target_value := randi_range(0, 50)
+	if hard_stats.has(target_stat):
+		target_value = randi_range(0, 100)
+	subject.set("target_activity", activity_type)
+	subject.set("target_stat", target_stat)
+	subject.set("target_value", target_value)
+
+func _set_random_job_stat_target() -> void:
+	var generator := get_node_or_null("/root/SubjectGenerator")
+	var subject: SubjectResource = null
+	if generator and generator.has_method("get_subject"):
+		subject = generator.get_subject()
+	if subject == null:
+		return
+	var target_job := String(subject.Job)
+	var target_stat := String(JOB_TARGET.job_stat.get(target_job, ""))
+	if target_stat == "":
+		return
+	var hard_stats := ["Intellect", "Aesthetic", "Health"]
+	var target_value := randi_range(0, 50)
+	if hard_stats.has(target_stat):
+		target_value = randi_range(0, 100)
+	subject.set("target_job", target_job)
+	subject.set("target_stat", target_stat)
+	subject.set("target_value", target_value)
+
+func _get_current_subject() -> SubjectResource:
+	var generator := get_node_or_null("/root/SubjectGenerator")
+	if generator == null or not generator.has_method("get_subject"):
+		return null
+	return generator.get_subject()

@@ -75,6 +75,26 @@ shader_parameter/intensityX = 1.5
 shader_parameter/intensityY = 1.5
 shader_parameter/seed = 31.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60w04"]
+bg_color = Color(0.7981297, 0.63490266, 0.46142316, 1)
+corner_radius_top_left = 1000
+corner_radius_bottom_left = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r1m1"]
+bg_color = Color(0.6481647, 0.4940077, 0.32714707, 1)
+corner_radius_top_left = 1000
+corner_radius_bottom_left = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmix5"]
+bg_color = Color(0.8666887, 0.47471106, 0.4995529, 1)
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1j6x"]
+bg_color = Color(0.75728494, 0.17715648, 0, 1)
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4orbe"]
 bg_color = Color(0.7254902, 0.41568628, 0.68235296, 1)
 
@@ -297,6 +317,62 @@ scroll_active = false
 autowrap_mode = 0
 autowrap_trim_flags = 0
 vertical_alignment = 1
+
+[node name="SubjectMoralityMeter" type="HBoxContainer" parent="Subject/SubjextData/HBoxContainer" unique_id=1747520049]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="AngelicStatBar" type="ProgressBar" parent="Subject/SubjextData/HBoxContainer/SubjectMoralityMeter" unique_id=626670613]
+texture_filter = 1
+custom_minimum_size = Vector2(106.5, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_60w04")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5r1m1")
+max_value = 15.0
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/HBoxContainer/SubjectMoralityMeter/AngelicStatBar" unique_id=1064688192]
+texture_filter = 1
+custom_minimum_size = Vector2(106.5, 24)
+layout_mode = 0
+offset_right = 106.5
+offset_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 16
+text = "angelic"
+horizontal_alignment = 1
+
+[node name="DevilishStatBar" type="ProgressBar" parent="Subject/SubjextData/HBoxContainer/SubjectMoralityMeter" unique_id=64415591]
+texture_filter = 1
+custom_minimum_size = Vector2(106.5, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_gmix5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g1j6x")
+max_value = 15.0
+fill_mode = 1
+show_percentage = false
+
+[node name="StatLabel" type="RichTextLabel" parent="Subject/SubjextData/HBoxContainer/SubjectMoralityMeter/DevilishStatBar" unique_id=850050653]
+texture_filter = 1
+custom_minimum_size = Vector2(106.5, 24)
+layout_mode = 0
+offset_right = 106.5
+offset_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/normal_font = ExtResource("6_lfncw")
+theme_override_font_sizes/normal_font_size = 16
+text = "devilish"
+horizontal_alignment = 1
 
 [node name="SubjectStats" type="HBoxContainer" parent="Subject/SubjextData" unique_id=1376793112]
 custom_minimum_size = Vector2(675, 0)

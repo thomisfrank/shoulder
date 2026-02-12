@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5unm8"]
 resource_local_to_scene = true
-bg_color = Color(1, 0.6431373, 0.9529412, 1)
+bg_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
 corner_radius_top_left = 80
 corner_radius_top_right = 80
 corner_radius_bottom_right = 80

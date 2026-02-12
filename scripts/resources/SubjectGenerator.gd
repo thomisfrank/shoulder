@@ -49,14 +49,18 @@ func generate_stats(subject: SubjectResource) -> void:
 	subject.Volatility = randi_range(20, 50)
 	subject.Affect = randi_range(20, 50)
 	subject.Nature = randi_range(20, 50)
+	subject.AngelMorality = randi_range(0, 15)
+	subject.DevilMorality = randi_range(0, 15)
 	print("Subject Stats: ", "Intellect:  ", subject.Intellect, " ",
-	"Aesthetic:  ", subject.Aesthetic, " ")
+	"Aesthetic:  ", subject.Aesthetic, " ",
+	"Angel Morality: ", subject.AngelMorality, " ",
+	"Devil Morality: ", subject.DevilMorality, " ")
 	set_stat_keywords(subject)
 	return
 	
 
 func set_stat_keywords(subject: SubjectResource) -> void:
-	print("Temperment: ")
+	print("Temperament: ")
 	if subject.Volatility > 31:
 		print("Easy Going")
 	elif subject.Volatility > 20:

@@ -5,6 +5,9 @@ extends PanelContainer
 @onready var SubjectName: RichTextLabel = $Subject/SubjextData/HBoxContainer/SubjectName/SubjectName
 @onready var SubjectSurname: RichTextLabel = $Subject/SubjextData/HBoxContainer/SubjectName/SubjectSurname
 @onready var SubjectJobTitle: RichTextLabel = $Subject/SubjextData/HBoxContainer/SubjectJobTitle
+@onready var SubjectMoralityMeter: HBoxContainer = $Subject/SubjextData/HBoxContainer/SubjectMoralityMeter
+@onready var AngelMoralityStatBar: ProgressBar = $Subject/SubjextData/HBoxContainer/SubjectMoralityMeter/AngelicStatBar
+@onready var DevilMoralityStatBar: ProgressBar = $Subject/SubjextData/HBoxContainer/SubjectMoralityMeter/DevilishStatBar
 @onready var SubjectIntellectStatLabel: RichTextLabel = $Subject/SubjextData/SubjectStats/HardStats/IntellectStat/StatBar/StatLabel
 @onready var SubjectAestheticStatLabel: RichTextLabel = $Subject/SubjextData/SubjectStats/HardStats/AestheticStat/StatBar/StatLabel
 @onready var SubjectHelthStatLabel: RichTextLabel = $Subject/SubjextData/SubjectStats/HardStats/HealthStat/StatBar/StatLabel
@@ -39,6 +42,8 @@ func load_in_subject(resource_in: SubjectResource):
 	SubjectName.text = resource_in.name
 	SubjectSurname.text = resource_in.surnam
 	SubjectJobTitle.text = resource_in.Job
+	AngelMoralityStatBar.value = resource_in.AngelMorality
+	DevilMoralityStatBar.value = resource_in.DevilMorality
 
 	SubjectIntellectStatLabel.text = str(resource_in.Intellect)
 	SubjectAestheticStatLabel.text = str(resource_in.Aesthetic)
@@ -102,6 +107,30 @@ func set_department_badge(department: String) -> void:
 		DepartmentBadge.texture = ANGEL_BADGE
 	elif dept_lower == "devil":
 		DepartmentBadge.texture = DEVIL_BADGE
+
+func clear_subject_info() -> void:
+	SubjectInfo = null
+	if DepartmentBadge:
+		DepartmentBadge.texture = null
+	if SubjectContainer:
+		SubjectContainer.visible = false
+	SubjectName.text = ""
+	SubjectSurname.text = ""
+	SubjectJobTitle.text = ""
+	AngelMoralityStatBar.value = 0
+	DevilMoralityStatBar.value = 0
+	SubjectIntellectStatLabel.text = ""
+	SubjectAestheticStatLabel.text = ""
+	SubjectHelthStatLabel.text = ""
+	SubjectVolatilityStatLabel.text = ""
+	SubjectAffectStatLabel.text = ""
+	SubjectNatureLabel.text = ""
+	SubjectIntellectStatBar.value = 0
+	SubjectAestheticStatBar.value = 0
+	SubjectHealthStatBar.value = 0
+	SubjectVolatilityStatBar.value = 0
+	SubjectAffectStatBar.value = 0
+	SubjectNatureStatBar.value = 0
 
 func reset_energy() -> void:
 	current_energy = MAX_ENERGY

@@ -29,11 +29,21 @@ func _ready() -> void:
 	_on_leisure_activities_toggled(leisure_activities.is_expanded())
 
 func _on_next_day_pressed() -> void:
+	var manager := get_node_or_null("/root/Gamemanager")
+	if manager and manager.has_method("is_run_active") and not manager.is_run_active():
+		return
 	emit_signal("next_day_pressed")
+	if (header == null or not is_instance_valid(header)) and has_node("Header"):
+		header = get_node("Header")
 	if header:
 		header.reset_energy()
 
 func _on_leisure_activity_pressed(activity_type: String) -> void:
+	var manager := get_node_or_null("/root/Gamemanager")
+	if manager and manager.has_method("is_run_active") and not manager.is_run_active():
+		return
+	if (header == null or not is_instance_valid(header)) and has_node("Header"):
+		header = get_node("Header")
 	if header and header.try_consume_energy():
 		feed.activity_pressed(activity_type)
 	else:
